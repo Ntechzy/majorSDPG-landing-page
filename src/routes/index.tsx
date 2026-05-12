@@ -3,15 +3,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import About from "@/components/About";
-import Courses from "@/components/Courses";
-import Facilities from "@/components/Facilities";
-import AdmissionsProcess from "@/components/AdmissionsProcess";
-import LeadForm from "@/components/LeadForm";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
+// import Courses from "@/components/Courses";
+// import Facilities from "@/components/Facilities";
+// import AdmissionsProcess from "@/components/AdmissionsProcess";
+// import LeadForm from "@/components/LeadForm";
+// import Testimonials from "@/components/Testimonials";
+// import FAQ from "@/components/FAQ";
+// import Contact from "@/components/Contact";
+// import Footer from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -26,19 +25,18 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="bg-cream">
-      <ScrollProgress />
       <Navbar />
       <Hero />
       <TrustBar />
       <About />
-      <Courses />
-      <Facilities />
-      <AdmissionsProcess />
-      <LeadForm />
-      <Testimonials />
-      <FAQ />
-      <Contact />
-      <Footer />
+      {/* <Courses /> */}
+      {/* <Facilities /> */}
+      {/* <AdmissionsProcess /> */}
+      {/* <LeadForm /> */}
+      {/* <Testimonials /> */}
+      {/* <FAQ /> */}
+      {/* <Contact /> */}
+      {/* <Footer /> */}
     </main>
   );
 }
