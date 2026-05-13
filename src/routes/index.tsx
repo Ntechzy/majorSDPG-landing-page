@@ -6,11 +6,11 @@ import About from "@/components/About";
 import Courses from "@/components/Courses";
 import Facilities from "@/components/Facilities";
 import AdmissionsProcess from "@/components/AdmissionsProcess";
-// import LeadForm from "@/components/LeadForm";
+import LeadForm from "@/components/LeadForm";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 // import Contact from "@/components/Contact";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -36,11 +36,11 @@ function Index() {
       <Courses />
       <Facilities />
       <AdmissionsProcess />
-      {/* <LeadForm /> */}
+      <LeadForm />
       <Testimonials />
       <FAQ />
       {/* <Contact /> */}
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }
