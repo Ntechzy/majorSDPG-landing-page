@@ -7,7 +7,7 @@ import Courses from "@/components/Courses";
 // import Facilities from "@/components/Facilities";
 // import AdmissionsProcess from "@/components/AdmissionsProcess";
 import LeadForm from "@/components/LeadForm";
-// import Testimonials from "@/components/Testimonials";
+import Testimonials from "@/components/Testimonials";
 // import FAQ from "@/components/FAQ";
 // import Contact from "@/components/Contact";
 // import Footer from "@/components/Footer";
@@ -37,7 +37,7 @@ function Index() {
       {/* <Facilities /> */}
       {/* <AdmissionsProcess /> */}
       <LeadForm />
-      {/* <Testimonials /> */}
+      <Testimonials />
       {/* <FAQ /> */}
       {/* <Contact /> */}
       {/* <Footer /> */}

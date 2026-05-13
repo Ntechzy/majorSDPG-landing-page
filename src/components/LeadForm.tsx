@@ -76,17 +76,25 @@ export default function LeadForm() {
           <div className="mt-8 space-y-2 text-charcoal">
             <div>
               📞{" "}
-              <a href="tel:+910000000000" className="font-semibold hover:underline">
-                +91 00000 00000
+              <a href="tel:+917300864280" className="font-semibold hover:underline">
+                +91 7300864280
               </a>
             </div>
             <div>
               📧{" "}
-              <a href="mailto:info@majorsdspgamc.com" className="font-semibold hover:underline">
-                info@majorsdspgamc.com
+              <a href="mailto:majorsdsinghayd@gmail.com" className="font-semibold hover:underline">
+                majorsdsinghayd@gmail.com
               </a>
             </div>
-            <div>📍 Major SD Singh PG Ayurvedic Medical College, Uttar Pradesh, India</div>
+            <div>
+              📍{" "}
+              <a
+                href="https://maps.app.goo.gl/ACWHJfCqZwpAnnSe8"
+                className="font-semibold hover:underline"
+              >
+                Major SD Singh PG Ayurvedic Medical College, Uttar Pradesh, India
+              </a>
+            </div>
           </div>
         </motion.div>
 
