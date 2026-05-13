@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-const APPLICATION_FORM_DIV_ID = "formsID7375";
+const SOURCE_FORM_DIV_ID = "formsID7375";
+const LEAD_FORM_DIV_ID = "formsID7375-lead";
 
 const TRUST = [
   "Free Counselling - No obligation",
@@ -10,6 +12,36 @@ const TRUST = [
 ];
 
 export default function LeadForm() {
+  useEffect(() => {
+    const syncForm = () => {
+      const source = document.getElementById(SOURCE_FORM_DIV_ID);
+      const target = document.getElementById(LEAD_FORM_DIV_ID);
+      if (!source || !target || source === target) return;
+      if (!source.children.length) return;
+      target.innerHTML = source.innerHTML;
+    };
+
+    syncForm();
+    const intervalId = window.setInterval(syncForm, 400);
+    window.setTimeout(() => window.clearInterval(intervalId), 8000);
+
+    const source = document.getElementById(SOURCE_FORM_DIV_ID);
+    const observer = source
+      ? new MutationObserver(() => {
+          syncForm();
+        })
+      : null;
+
+    if (source && observer) {
+      observer.observe(source, { childList: true, subtree: true });
+    }
+
+    return () => {
+      window.clearInterval(intervalId);
+      observer?.disconnect();
+    };
+  }, []);
+
   return (
     <section
       id="lead"
@@ -67,10 +99,7 @@ export default function LeadForm() {
           <div className="mb-4 border-b border-gray-100 pb-4">
             <h3 className="text-2xl font-bold text-charcoal">Request Free Counselling</h3>
           </div>
-          <div
-            id={APPLICATION_FORM_DIV_ID}
-            className="h-125 w-full overflow-y-auto bg-white sm:h-137.5"
-          />
+          <div id={LEAD_FORM_DIV_ID} className="h-125 w-full overflow-y-auto bg-white sm:h-137.5" />
         </motion.div>
       </div>
     </section>
