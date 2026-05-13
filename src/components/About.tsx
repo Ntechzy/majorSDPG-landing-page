@@ -47,7 +47,7 @@ export default function About() {
           {/* Outer frame with gold glow */}
           <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(184,134,11,0.2)] border border-gold/25 group">
             {/* Gold top accent */}
-            <div className="absolute top-0 left-0 right-0 z-10 h-[3px] bg-gradient-to-r from-transparent via-gold to-transparent" />
+            <div className="absolute top-0 left-0 right-0 z-10 h-0.75 bg-linear-to-r from-transparent via-gold to-transparent" />
 
             {/* 16:9 iframe wrapper */}
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
@@ -131,7 +131,7 @@ export default function About() {
             A Legacy of{" "}
             <span className="relative inline-block">
               <span className="text-gold-dark">Ayurvedic Excellence</span>
-              <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-gold/0 via-gold to-gold/0" />
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-gold/0 via-gold to-gold/0" />
             </span>{" "}
             Since Decades
           </h2>
@@ -168,7 +168,7 @@ export default function About() {
                   transition={{ delay: 0.1 + i * 0.08 }}
                   className="flex items-center gap-3 bg-white border border-gold/15 rounded-xl px-4 py-3 hover:border-gold/35 hover:shadow-[0_4px_16px_rgba(184,134,11,0.1)] transition-all duration-200 group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
                     <Icon size={13} className="text-gold-dark" />
                   </div>
                   <span className="text-charcoal font-medium text-xs sm:text-sm leading-snug">
