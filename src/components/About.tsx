@@ -1,84 +1,123 @@
 import { motion } from "framer-motion";
-import { ABOUT_STATS } from "@/constants/data";
-import CountUp from "./CountUp";
+import { useState } from "react";
+import { FiCheckCircle } from "react-icons/fi";
+import { FaHospital, FaBookOpen, FaLeaf, FaUserDoctor } from "react-icons/fa6";
 import SectionLabel from "./SectionLabel";
 
 const POINTS = [
-  { icon: "✓", title: "NCISM & State Govt. Recognized" },
-  { icon: "📖", title: "Experienced Vaidyas & Professors" },
-  { icon: "🏥", title: "Full Teaching Hospital Attached" },
-  { icon: "🌿", title: "Holistic Residential Campus" },
+  { icon: FiCheckCircle, title: "CCIM & State Govt. Recognized" },
+  { icon: FaUserDoctor, title: "Experienced Vaidyas & Professors" },
+  { icon: FaHospital, title: "Full Teaching Hospital Attached" },
+  { icon: FaLeaf, title: "Holistic Residential Campus" },
 ];
 
+// ← Replace this with your actual YouTube video ID
+const YOUTUBE_VIDEO_ID = "y5xktd1yaQc";
+
 export default function About() {
+  const [playVideo, setPlayVideo] = useState(false);
   return (
-    <section id="about" className="relative bg-cream py-16 md:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Visual/Stats Column */}
+    <section
+      id="about"
+      className="relative bg-cream py-20 md:py-28 overflow-hidden"
+    >
+      {/* Background accents */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-72 h-72 bg-gold/8 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/6 rounded-full blur-[90px]" />
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #B8860B 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+        {/* ── LEFT: YouTube Video ── */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative h-80 sm:h-100 md:h-115 flex items-center justify-center order-2 lg:order-1"
+          className="order-2 lg:order-1"
         >
-          {/* Mandala SVG - Scaled for mobile */}
-          <svg
-            className="absolute inset-0 w-full h-full opacity-20 animate-[spin_60s_linear_infinite] scale-75 sm:scale-100"
-            viewBox="0 0 400 400"
-          >
-            {[180, 150, 120, 90, 60].map((r) => (
-              <circle
-                key={r}
-                cx="200"
-                cy="200"
-                r={r}
-                stroke="#F5B800"
-                strokeWidth="1"
-                fill="none"
-              />
-            ))}
-            {Array.from({ length: 12 }).map((_, i) => {
-              const a = (i * 30 * Math.PI) / 180;
-              return (
-                <ellipse
-                  key={i}
-                  cx={200 + Math.cos(a) * 130}
-                  cy={200 + Math.sin(a) * 130}
-                  rx="20"
-                  ry="40"
-                  stroke="#F5B800"
-                  strokeWidth="1"
-                  fill="none"
-                  transform={`rotate(${i * 30} ${200 + Math.cos(a) * 130} ${200 + Math.sin(a) * 130})`}
-                />
-              );
-            })}
-          </svg>
+          {/* Outer frame with gold glow */}
+          <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(184,134,11,0.2)] border border-gold/25 group">
+            {/* Gold top accent */}
+            <div className="absolute top-0 left-0 right-0 z-10 h-[3px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
-          {/* Stats Grid */}
-          <div className="relative grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-70 sm:max-w-sm">
-            {ABOUT_STATS.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white border border-gold/30 rounded-xl p-3 sm:p-5 text-center shadow-lg shadow-gold/5"
-              >
-                <div className="text-2xl sm:text-3xl font-bold text-gold">
-                  <CountUp end={s.value} suffix={s.suffix} />
-                </div>
-                <div className="text-charcoal/70 text-[10px] sm:text-xs mt-1 font-medium uppercase tracking-tighter sm:tracking-normal">
-                  {s.label}
-                </div>
-              </motion.div>
-            ))}
+            {/* 16:9 iframe wrapper */}
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              {playVideo ? (
+                <iframe
+                  className="absolute inset-0 w-full h-full border-0"
+                  src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&color=white`}
+                  title="MSDS AMCH Campus & College Tour"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setPlayVideo(true)}
+                  className="absolute inset-0 w-full h-full group/thumb"
+                  aria-label="Play campus tour video"
+                >
+                  <img
+                    src="/thumnail.webp"
+                    alt="Campus tour video thumbnail"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/25 group-hover/thumb:bg-black/35 transition-colors duration-200" />
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="w-16 h-16 rounded-full bg-white/90 group-hover/thumb:bg-white text-charcoal-deep flex items-center justify-center shadow-lg transition-all duration-200">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-7 h-7 ml-1"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+              )}
+            </div>
+
+            {/* Bottom caption bar */}
+            <div className="bg-charcoal-deep px-5 py-3 flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+              <p className="text-cream/70 text-xs font-medium tracking-wide">
+                Campus & College Tour — Major S.D. Singh PG AMCH
+              </p>
+            </div>
           </div>
+
+          {/* Floating badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-4 flex items-center gap-3 bg-white border border-gold/20 rounded-xl px-4 py-3 shadow-[0_4px_20px_rgba(184,134,11,0.08)] w-fit"
+          >
+            <div className="w-9 h-9 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+              <FaBookOpen size={14} className="text-gold-dark" />
+            </div>
+            <div>
+              <p className="text-charcoal font-bold text-sm">20+ Years of Excellence</p>
+              <p className="text-charcoal/50 text-[11px]">Nurturing Ayurvedic physicians since decades</p>
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Text Content Column */}
+        {/* ── RIGHT: Text Content ── */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -87,35 +126,82 @@ export default function About() {
           className="order-1 lg:order-2 text-center lg:text-left"
         >
           <SectionLabel className="justify-center lg:justify-start">About Us</SectionLabel>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold text-charcoal leading-tight">
-            A Legacy of <span className="text-gold-dark">Ayurvedic Excellence</span> Since Decades
-          </h2>
-          <div className="h-px w-16 sm:w-20 bg-gold my-4 sm:my-6 mx-auto lg:mx-0" />
 
-          <p className="text-charcoal/75 text-sm sm:text-base leading-relaxed mb-4">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-[2.75rem] font-bold text-charcoal leading-tight">
+            A Legacy of{" "}
+            <span className="relative inline-block">
+              <span className="text-gold-dark">Ayurvedic Excellence</span>
+              <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-gold/0 via-gold to-gold/0" />
+            </span>{" "}
+            Since Decades
+          </h2>
+
+          {/* Decorative divider */}
+          <div className="flex items-center gap-3 my-6 justify-center lg:justify-start">
+            <div className="h-px w-10 bg-gold/40" />
+            <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+            <div className="h-px w-10 bg-gold/40" />
+          </div>
+
+          <p className="text-charcoal/70 text-sm sm:text-base leading-relaxed mb-4">
             Major SD Singh PG Ayurvedic Medical College & Hospital is a premier institution
             dedicated to the timeless science of Ayurveda. Affiliated with the state university and
             approved by NCISM, we have nurtured thousands of physicians and surgeons over four
             decades.
           </p>
-          <p className="text-charcoal/75 text-sm sm:text-base leading-relaxed mb-8">
+          <p className="text-charcoal/70 text-sm sm:text-base leading-relaxed mb-8">
             Our mission is to seamlessly blend the wisdom of classical Ayurvedic Samhitas with the
-            rigor of modern medical sciences.
+            rigor of modern medical sciences — producing healers who are rooted in tradition and
+            ready for the future.
           </p>
 
-          {/* Points Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-md mx-auto lg:mx-0">
-            {POINTS.map((p) => (
-              <div key={p.title} className="flex items-center lg:items-start gap-3">
-                <span className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-green/10 text-green flex items-center justify-center font-bold text-sm">
-                  {p.icon}
-                </span>
-                <span className="text-charcoal font-medium text-xs sm:text-sm">{p.title}</span>
-              </div>
-            ))}
+          {/* Feature points */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-md mx-auto lg:mx-0 mb-8">
+            {POINTS.map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <motion.div
+                  key={p.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 + i * 0.08 }}
+                  className="flex items-center gap-3 bg-white border border-gold/15 rounded-xl px-4 py-3 hover:border-gold/35 hover:shadow-[0_4px_16px_rgba(184,134,11,0.1)] transition-all duration-200 group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                    <Icon size={13} className="text-gold-dark" />
+                  </div>
+                  <span className="text-charcoal font-medium text-xs sm:text-sm leading-snug">
+                    {p.title}
+                  </span>
+                </motion.div>
+              );
+            })}
           </div>
+
+          {/* CTA */}
+          <a
+            href="#admissions"
+            className="group inline-flex items-center gap-2 bg-gold-dark hover:bg-gold text-white font-bold px-7 py-3.5 rounded-full text-sm transition-all duration-200 hover:shadow-[0_4px_20px_rgba(184,134,11,0.4)]"
+          >
+            Explore Admissions
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
         </motion.div>
       </div>
     </section>
   );
 }
+

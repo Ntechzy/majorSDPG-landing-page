@@ -1,6 +1,6 @@
 import { FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import logo from "/public/logo.webp";
+import logo from "/logo.webp";
 
 const SOCIAL = [
   {
