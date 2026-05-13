@@ -107,7 +107,7 @@ export default function LeadForm() {
           <div className="mb-4 border-b border-gray-100 pb-4">
             <h3 className="text-2xl font-bold text-charcoal">Request Free Counselling</h3>
           </div>
-          <div id={LEAD_FORM_DIV_ID} className="h-125 w-full overflow-y-auto bg-white sm:h-137.5" />
+          <div id={LEAD_FORM_DIV_ID} className="h-160 w-full overflow-y-hidden bg-white sm:h-170" />
         </motion.div>
       </div>
     </section>
