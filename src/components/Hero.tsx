@@ -50,7 +50,7 @@ export default function Hero() {
               variants={item}
               className="mb-4 text-3xl font-extrabold leading-[1.15] text-cream sm:text-5xl lg:text-6xl xl:text-7xl"
             >
-              <span className="text-gold">Major S. D. Singh</span>{" "}
+              <span className="text-gold">Major S. D. Singh PG </span>{" "}
               <br className="hidden sm:block" />
               Ayurvedic Medical College
             </motion.h1>
