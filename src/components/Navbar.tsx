@@ -32,7 +32,10 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-3 sm:h-20 sm:px-6 lg:px-8">
-        <a href="#home" className="group flex min-w-0 flex-1 items-center gap-2 sm:gap-3 lg:flex-none">
+        <a
+          href="#home"
+          className="group flex min-w-0 flex-1 items-center gap-2 sm:gap-3 lg:flex-none"
+        >
           <img
             src="/logo.webp"
             alt="MSDS AMCH logo"
@@ -58,7 +61,7 @@ export default function Navbar() {
           ))}
           <div className="flex items-center gap-2 xl:gap-3">
             <a
-              href="https://wa.me/917300864280"
+              href="https://wa.me/918189098662"
               target="_blank"
               rel="noopener noreferrer"
               className="whitespace-nowrap rounded-full border border-gold/50 px-4 py-2.5 font-semibold text-gold transition-all hover:scale-105 hover:bg-gold/10 active:scale-95 xl:px-5"
@@ -122,7 +125,7 @@ export default function Navbar() {
 
               <div className="grid grid-cols-1 gap-3 pt-6 sm:grid-cols-2">
                 <a
-                  href="https://wa.me/917300864280"
+                  href="https://wa.me/918189098662"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}

@@ -76,8 +76,8 @@ export default function LeadForm() {
           <div className="mt-8 space-y-2 text-charcoal">
             <div>
               📞{" "}
-              <a href="tel:+917300864280" className="font-semibold hover:underline">
-                +91 7300864280
+              <a href="tel:+918189098662" className="font-semibold hover:underline">
+                +91 8189098662
               </a>
             </div>
             <div>

@@ -17,10 +17,7 @@ const YOUTUBE_VIDEO_ID = "y5xktd1yaQc";
 export default function About() {
   const [playVideo, setPlayVideo] = useState(false);
   return (
-    <section
-      id="about"
-      className="relative bg-cream py-20 md:py-28 overflow-hidden"
-    >
+    <section id="about" className="relative bg-cream py-20 md:py-28 overflow-hidden">
       {/* Background accents */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-72 h-72 bg-gold/8 rounded-full blur-[100px]" />
@@ -35,7 +32,6 @@ export default function About() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
         {/* ── LEFT: YouTube Video ── */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -113,7 +109,9 @@ export default function About() {
             </div>
             <div>
               <p className="text-charcoal font-bold text-sm">20+ Years of Excellence</p>
-              <p className="text-charcoal/50 text-[11px]">Nurturing Ayurvedic physicians since decades</p>
+              <p className="text-charcoal/50 text-[11px]">
+                Nurturing Ayurvedic physicians since decades
+              </p>
             </div>
           </motion.div>
         </motion.div>
@@ -205,4 +203,3 @@ export default function About() {
     </section>
   );
 }
-

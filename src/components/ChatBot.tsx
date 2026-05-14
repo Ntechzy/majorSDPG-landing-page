@@ -15,12 +15,7 @@ type ChatMessage = {
 const steps: Step[] = [
   {
     question: "Hi, what program are you interested in?",
-    options: [
-      "BAMS",
-      "MS Prasuti Tantra",
-      "MS Shalya Tantra",
-      "Not sure, guide me",
-    ],
+    options: ["BAMS", "MS Prasuti Tantra", "MS Shalya Tantra", "Not sure, guide me"],
   },
   {
     question: "Great. What would you like to know?",
@@ -91,7 +86,7 @@ export default function ChatBot() {
 
   const whatsappLink = () => {
     const msg = chat.map((c) => `${c.type === "user" ? "User" : "Bot"}: ${c.text}`).join("\n");
-    return `https://wa.me/917300864280?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/918189098662?text=${encodeURIComponent(msg)}`;
   };
 
   return (
@@ -133,7 +128,7 @@ export default function ChatBot() {
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
-            className="fixed inset-x-3 bottom-3 z-50 flex h-[78dvh] max-h-[640px] w-auto flex-col overflow-hidden rounded-2xl border border-gold/20 bg-cream shadow-2xl sm:right-6 sm:bottom-24 sm:left-auto sm:top-auto sm:h-[500px] sm:w-[340px] sm:max-w-[92vw] sm:translate-y-0"
+            className="fixed inset-x-3 bottom-3 z-50 flex h-[78dvh] max-h-160 w-auto flex-col overflow-hidden rounded-2xl border border-gold/20 bg-cream shadow-2xl sm:right-6 sm:bottom-24 sm:left-auto sm:top-auto sm:h-125 sm:w-85 sm:max-w-[92vw] sm:translate-y-0"
           >
             <div className="flex items-center justify-between bg-linear-to-r from-gold to-gold-dark px-4 py-3 font-semibold text-charcoal">
               <span>Admissions Assistant</span>
@@ -183,7 +178,7 @@ export default function ChatBot() {
             {step >= steps.length && (
               <div className="grid grid-cols-2 gap-2 border-t border-gold/20 bg-cream p-3">
                 <a
-                  href="tel:+917300864280"
+                  href="tel:+918189098662"
                   className="rounded-full bg-gold py-2.5 text-center text-sm font-semibold text-charcoal transition hover:brightness-95"
                 >
                   Call

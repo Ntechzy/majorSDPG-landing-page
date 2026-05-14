@@ -129,7 +129,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
               '["Select Course", "MBBS", "BDS", "BAMS", "BHMS", "BUMS", "BNYS", "BSc. Nursing", "Veterinary"]',
             styles: "classic",
             logo: "/logo.webp",
-            contact: "7300864280",
+            contact: "8189098662",
           } as Record<string, string>)}
         ></script>
         <Scripts />

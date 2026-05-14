@@ -24,7 +24,7 @@ const SOCIAL = [
   },
   {
     icon: FaWhatsapp,
-    href: "https://wa.me/917300864280",
+    href: "https://wa.me/918189098662",
     label: "WhatsApp",
     hover: "hover:bg-green-500 hover:border-transparent",
   },
@@ -62,8 +62,7 @@ const CONTACT = [
   {
     icon: FiPhone,
     lines: [
-      { label: "+91 7300864280", href: "tel:+917300864280" },
-      { label: "+91 8840243743", href: "tel:+918840243743" },
+      { label: "+91 8189098662", href: "tel:+918189098662" },
     ],
   },
   {

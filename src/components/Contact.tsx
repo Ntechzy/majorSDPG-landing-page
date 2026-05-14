@@ -9,8 +9,7 @@ const CONTACT_ITEMS = [
     icon: FiPhone,
     label: "Phone",
     lines: [
-      { text: "+91 7311125822", href: "tel:+917311125822" },
-      { text: "+91 9554964680", href: "tel:+919554964680" },
+      { text: "+91 8189098662", href: "tel:+918189098662" },
     ],
   },
   {
@@ -52,7 +51,7 @@ const SOCIAL = [
   {
     icon: FaWhatsapp,
     label: "WhatsApp",
-    href: "https://wa.me/917300864280",
+    href: "https://wa.me/918189098662",
     bg: "hover:bg-green-500",
   },
 ];
@@ -163,7 +162,7 @@ export default function Contact() {
               {/* WhatsApp CTA */}
               <div className="px-6 pb-6">
                 <a
-                  href="https://wa.me/917300864280"
+                  href="https://wa.me/918189098662"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-5 py-3 rounded-xl text-sm transition-all duration-200 hover:shadow-[0_4px_20px_rgba(37,211,102,0.4)]"
