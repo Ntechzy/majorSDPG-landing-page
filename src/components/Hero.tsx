@@ -13,13 +13,6 @@ const item = {
 };
 
 export default function Hero() {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "data:application/pdf;base64,JVBERi0xLjQK";
-    link.download = "MSDS_BAMS_Brochure.pdf";
-    link.click();
-  };
-
   const scrollToLeadForm = () => {
     const form = document.getElementById(APPLICATION_FORM_DIV_ID);
     if (!form) return;
@@ -88,12 +81,12 @@ export default function Hero() {
               >
                 Apply Now
               </button>
-              <button
-                onClick={handleDownload}
+              <a
+                href="https://majorsdspgamc.com/college-other-facilities/"
                 className="flex items-center justify-center rounded-full border-2 border-cream/20 bg-white/5 px-10 py-4 text-base font-bold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
               >
                 Campus Tour
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -110,7 +103,7 @@ export default function Hero() {
               </div>
               <div
                 id={APPLICATION_FORM_DIV_ID}
-                className="h-130 w-full overflow-y-hidden bg-white sm:h-170"
+                className="h-118 w-full overflow-y-hidden bg-white sm:h-156"
               />
             </div>
 
