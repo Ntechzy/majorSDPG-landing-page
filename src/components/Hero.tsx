@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-charcoal-deep/95 via-charcoal-deep/80 to-charcoal-deep/90 sm:bg-linear-to-r" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32 xl:py-40">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-20 xl:py-24">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
           {/* Text Content */}
           <motion.div
@@ -55,7 +55,7 @@ export default function Hero() {
 
             <motion.h1
               variants={item}
-              className="mb-4 text-3xl font-extrabold leading-[1.15] text-cream sm:text-5xl lg:text-6xl xl:text-7xl"
+              className="mb-4 text-3xl font-extrabold leading-[1.15] text-cream sm:text-4xl lg:text-5xl xl:text-6xl"
             >
               <span className="text-gold">Major S. D. Singh PG </span>{" "}
               <br className="hidden sm:block" />
