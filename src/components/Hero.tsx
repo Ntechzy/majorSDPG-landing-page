@@ -68,6 +68,7 @@ export default function Hero() {
             >
               Classical Ayurveda, clinical confidence, and research-minded care.
             </motion.h2>
+            <motion.p variants={item} className="mb-6 inline-block rounded-md bg-gold px-3 py-1 text-sm font-bold text-charcoal">Oldest college in UP</motion.p>
 
             <motion.p
               variants={item}
