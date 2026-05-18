@@ -13,8 +13,8 @@ import {
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "Courses", href: "#courses" },
   { label: "About", href: "#about" },
+  { label: "Courses", href: "#courses" },
   { label: "Facilities", href: "#facilities" },
   { label: "Admissions", href: "#admissions" },
   { label: "Contact", href: "#contact" },
