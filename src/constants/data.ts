@@ -71,7 +71,7 @@ export const COURSES = [
     ],
     eligibility: "BAMS from recognized university",
     cta: "Enquire for MS (Prasuti)",
-    ctaClass: "bg-sky text-white hover:bg-sky-dark",
+    ctaClass: "bg-gold text-charcoal hover:bg-gold-dark",
   },
   {
     icon: "⚕️",
@@ -90,7 +90,7 @@ export const COURSES = [
     ],
     eligibility: "BAMS from recognized university",
     cta: "Enquire for MS (Shalya)",
-    ctaClass: "bg-green text-white hover:bg-green-light",
+    ctaClass: "bg-gold text-charcoal hover:bg-gold-dark",
   },
 ];
 
