@@ -178,9 +178,9 @@ export const STEPS = [
     desc: "Our admissions team will contact you for guidance and document verification",
   },
   {
-    icon: "🎓",
-    title: "Confirm Admission",
-    desc: "Submit documents, pay fees, and secure your seat",
+    icon: "🎯",
+    title: "Admission Guidance",
+    desc: "After counselling, our team will assist you with seat confirmation, documentation, and further admission formalities",
   },
 ];
 
