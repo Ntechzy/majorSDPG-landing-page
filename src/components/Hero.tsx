@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/70 to-black/80 sm:bg-linear-to-r" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-20 xl:py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-20 xl:py-22">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-12 xl:gap-18">
           {/* Text Content */}
           <motion.div
