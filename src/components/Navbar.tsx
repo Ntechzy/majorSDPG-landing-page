@@ -34,22 +34,16 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-3 sm:h-20 sm:px-6 lg:px-8">
         <a
           href="#home"
-          className="group flex min-w-0 flex-1 items-center gap-2 sm:gap-3 lg:flex-none"
+          className="group flex min-w-0 flex-1 items-center lg:flex-none"
         >
           <img
-            src="/logo.webp"
-            alt="MSDS AMCH logo"
-            className="h-9 w-9 shrink-0 rounded-full object-contain sm:h-12 sm:w-12"
+            src="/MAJOR-SD-SINGH-AYURVEDIC-MEDICAL-COLLEGE.png"
+            alt="Major S. D. Singh Ayurvedic Medical College logo"
+            className="h-10 w-auto max-w-55 shrink-0 object-contain sm:h-12 sm:max-w-70 rounded-md"
             loading="eager"
             decoding="async"
             fetchPriority="high"
           />
-          <span className="min-w-0 line-clamp-2 text-sm font-bold leading-tight tracking-wide text-gold sm:text-lg lg:text-xl">
-            Major S. D. Singh PG{" "}
-            <span className="block text-[11px] font-semibold sm:inline sm:text-inherit">
-              Ayurvedic Medical College
-            </span>
-          </span>
         </a>
 
         <div className="hidden items-center gap-6 lg:flex xl:gap-8">

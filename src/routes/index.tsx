@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import EventsSection from "@/components/EventsSection";
 
 const TrustBar = lazy(() => import("@/components/TrustBar"));
 const About = lazy(() => import("@/components/About"));
@@ -67,6 +68,7 @@ function Index() {
         <About />
         <Courses />
         <Facilities />
+        <EventsSection/>
         <AdmissionsProcess />
         <LeadForm />
         <Testimonials />

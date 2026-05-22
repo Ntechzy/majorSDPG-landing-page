@@ -17,6 +17,7 @@ export const NAV_LINKS = [
   { label: "Courses", href: "#courses" },
   { label: "Facilities", href: "#facilities" },
   { label: "Admissions", href: "#admissions" },
+  { label: "Blog", href: "https://blogs.majorsdsinghpgamc.in/" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -120,14 +121,14 @@ export const FACILITIES = [
     icon: FaLeaf,
     title: "Herbal Garden",
     desc: "On-campus medicinal plant garden with 300+ species — a living classroom for Dravyaguna and pharmacognosy.",
-    image: "/facilities/herbalgarden.webp",
+    image: "/facilities/herbalgarden2.webp",
     tag: "Nature",
   },
   {
     icon: FaBed,
     title: "Hostel Facility",
     desc: "Secure, comfortable on-campus hostels for boys and girls with 24/7 wardens and all essential amenities.",
-    image: "/facilities/hostel.webp",
+    image: "/facilities/hostel2.png",
     tag: "Living",
   },
   {
