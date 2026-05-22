@@ -17,6 +17,7 @@ export const NAV_LINKS = [
   { label: "Courses", href: "#courses" },
   { label: "Facilities", href: "#facilities" },
   { label: "Admissions", href: "#admissions" },
+  { label: "Blog", href: "https://blogs.majorsdsinghpgamc.in/" },
   { label: "Contact", href: "#contact" },
 ];
 
