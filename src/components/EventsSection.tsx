@@ -106,7 +106,7 @@ const GalleryCard: React.FC<{
             {event.title}
           </h3>
 
-          {event.date && (
+          {/* {event.date && (
             <p
               className={`mt-1 text-gray-300 ${
                 isLarge ? "text-sm mt-2" : "text-xs"
@@ -114,7 +114,7 @@ const GalleryCard: React.FC<{
             >
               {event.date}
             </p>
-          )}
+          )} */}
         </div>
       </div>
     </motion.a>
