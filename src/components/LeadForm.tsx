@@ -45,52 +45,55 @@ export default function LeadForm() {
   return (
     <section
       id="lead"
-      className="py-24"
-      style={{ background: "linear-gradient(135deg, #F5B800 0%, #C99A00 100%)" }}
+      className="relative py-24 bg-cover bg-center bg-no-repeat bg-[url('/college3.webp')]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      {/* Dark overlay to ensure text is perfectly readable */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <div className="text-charcoal/80 text-xs font-semibold uppercase tracking-[0.3em] mb-3">
+          <div className="text-[#d4af37] text-xs font-bold uppercase tracking-[0.3em] mb-3">
             Admissions Counsellor
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
             Start Your Ayurvedic Career Today
           </h2>
-          <p className="text-charcoal/80 mt-4 text-lg">
+          <p className="text-white/80 mt-4 text-lg">
             Fill in your details and our admissions counsellor will reach out within 24 hours.
           </p>
           <ul className="mt-8 space-y-3">
             {TRUST.map((t) => (
-              <li key={t} className="flex items-center gap-3 text-charcoal font-medium">
-                <span className="w-6 h-6 rounded-full bg-charcoal text-gold flex items-center justify-center text-sm font-bold">
+              <li key={t} className="flex items-center gap-3 text-white/90 font-medium">
+                <span className="w-6 h-6 rounded-full bg-[#d4af37] text-black flex items-center justify-center text-sm font-bold shrink-0">
                   ✓
                 </span>
                 {t}
               </li>
             ))}
           </ul>
-          <div className="mt-8 space-y-2 text-charcoal">
-            <div>
-              📞{" "}
-              <a href="tel:+918189098662" className="font-semibold hover:underline">
+          
+          <div className="mt-8 space-y-2 text-white/90 border-t border-white/10 pt-6">
+            <div className="flex items-center gap-2">
+              <span>📞</span>{" "}
+              <a href="tel:+918189098662" className="font-semibold hover:text-[#d4af37] transition-colors hover:underline">
                 +91 8189098662
               </a>
             </div>
-            <div>
-              📧{" "}
-              <a href="mailto:majorsdsinghayd@gmail.com" className="font-semibold hover:underline">
+            <div className="flex items-center gap-2">
+              <span>📧</span>{" "}
+              <a href="mailto:majorsdsinghayd@gmail.com" className="font-semibold hover:text-[#d4af37] transition-colors hover:underline">
                 majorsdsinghayd@gmail.com
               </a>
             </div>
-            <div>
-              📍{" "}
+            <div className="flex items-start gap-2">
+              <span className="mt-1">📍</span>{" "}
               <a
                 href="https://maps.app.goo.gl/ACWHJfCqZwpAnnSe8"
-                className="font-semibold hover:underline"
+                className="font-semibold hover:text-[#d4af37] transition-colors hover:underline"
               >
                 Major SD Singh PG Ayurvedic Medical College, Uttar Pradesh, India
               </a>
@@ -102,10 +105,10 @@ export default function LeadForm() {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-2xl shadow-charcoal/30 p-8 md:p-10"
+          className="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
         >
           <div className="mb-4 border-b border-gray-100 pb-4">
-            <h3 className="text-2xl font-bold text-charcoal">Request Free Counselling</h3>
+            <h3 className="text-2xl font-bold text-gray-900">Request Free Counselling</h3>
           </div>
           <div
             id={LEAD_FORM_DIV_ID}

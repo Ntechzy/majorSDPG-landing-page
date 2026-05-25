@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import EventsSection from "@/components/EventsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const TrustBar = lazy(() => import("@/components/TrustBar"));
 const About = lazy(() => import("@/components/About"));
@@ -70,6 +71,7 @@ function Index() {
         <Facilities />
         <EventsSection/>
         <AdmissionsProcess />
+        <TestimonialsSection/>
         <LeadForm />
         <Testimonials />
         <FAQ />
