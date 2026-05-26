@@ -13,7 +13,7 @@ const TESTIMONIALS = [
     role: "BAMS Student, 3rd Year",
     text: "BAMS training here is very balanced. We study classical Ayurvedic Samhitas deeply and also get clear understanding of modern anatomy, physiology, and clinical practice.",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+      "/avatar/f1.png",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const TESTIMONIALS = [
     role: "MS Prasuti Tantra Alumna",
     text: "The Prasuti Tantra Avum Stri Rog program gave me excellent exposure in Garbhini Paricharya, Yoni Vyapad Chikitsa, and real OBG clinical postings with confident mentorship.",
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop",
+      "/avatar/f4.png",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
     role: "MS Shalya Tantra, Final Year",
     text: "From Sushruta Samhita concepts to OT exposure, the Shalya Tantra curriculum is practical and disciplined. Ksharasutra and wound management sessions are especially strong.",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+      "/avatar/b2.png",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const TESTIMONIALS = [
     role: "BAMS Intern",
     text: "The one-year internship after BAMS helped me convert textbook concepts into patient care. Panchakarma, Rasayana, and clinical decision-making improved a lot.",
     avatar:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+      "/avatar/f3.png",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const TESTIMONIALS = [
     role: "Assistant Professor, Prasuti Dept.",
     text: "Our MS scholars are trained to integrate Ayurvedic principles with modern gynecology protocols. Their diagnostic clarity and case documentation quality are impressive.",
     avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+      "/avatar/f2.png",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ const TESTIMONIALS = [
     role: "Consultant Ayurvedic Surgeon",
     text: "Graduates from the Shalya Tantra stream show strong surgical fundamentals, especially in para-surgical procedures like Ksharasutra and structured peri-operative care.",
     avatar:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
+      "/avatar/b3.png",
   },
 ];
 
