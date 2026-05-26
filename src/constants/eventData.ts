@@ -35,7 +35,7 @@ export const events: EventCard[] = [
   {
     id: 4,
     title: "9th National Seminar on “Dosh Dhatu Mal Moolam Hi Shariram”",
-    image: "/event/e10.webp",
+    image: "/event/e13.jpg",
     link: "https://www.facebook.com/share/p/1BFvyBRhTe/",
     category: "Outreach",
     date: "May 2026",

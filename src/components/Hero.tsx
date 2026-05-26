@@ -35,9 +35,9 @@ export default function Hero() {
           loading="eager"
         />
         {/* Richer layered overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/85 sm:bg-gradient-to-r sm:from-black/80 sm:via-black/60 sm:to-black/30" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/65 to-black/85 sm:bg-linear-to-r sm:from-black/80 sm:via-black/60 sm:to-black/30" />
         {/* Subtle warm tint at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-amber-950/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-amber-950/30 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-20 xl:py-22">
@@ -51,7 +51,7 @@ export default function Hero() {
             animate="visible"
           >
             {/* Admissions badge */}
-            <motion.div
+            {/* <motion.div
               variants={item}
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-gold backdrop-blur-md sm:text-xs"
             >
@@ -60,7 +60,7 @@ export default function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
               </span>
               Admissions Open · Session 2026–2027
-            </motion.div>
+            </motion.div> */}
 
             {/* Main heading */}
             <motion.h1
