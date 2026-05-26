@@ -39,7 +39,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 flex flex-col w-full font-sans transition-all duration-300 ${
         scrolled || open
-          ? "shadow-md bg-[#FDFBF7]" 
+          ? "shadow-md bg-cream" 
           : "bg-transparent"
       }`}
     >
@@ -49,36 +49,35 @@ export default function Navbar() {
       <div 
         className={`hidden lg:flex w-full h-10 border-b text-xs items-center justify-between px-6 xl:px-12 transition-all duration-300 ${
           scrolled 
-            ? "border-zinc-200 bg-zinc-100 text-zinc-800" 
+            ? "border-gold/15 bg-cream/90 text-charcoal/80" 
             : "border-white/10 bg-black/20 text-white"
         }`}
       >
         {/* Left Side: Campaign Ticker */}
         <div className="flex items-center gap-3">
-          <span className={`tracking-wide font-light ${scrolled ? "text-zinc-600" : "text-zinc-300"}`}>
+          <span className={`tracking-wide font-light ${scrolled ? "text-charcoal/70" : "text-cream/80"}`}>
             Register Now for Joint Campus Placement Programme
           </span>
           <a
-            href="#register"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider transition-colors"
+            href="#lead"
+            className="bg-gold hover:bg-gold-dark text-charcoal-deep font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider transition-colors"
           >
             Register Now
           </a>
         </div>
 
         {/* Right Side: Quick Links & Icons */}
-        <div className={`flex items-center gap-5 ${scrolled ? "text-zinc-700" : "text-zinc-300"}`}>
-          <a href="https://wa.me/918189098662" target="_blank" rel="noreferrer" className={`flex items-center gap-1 hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>
+        <div className={`flex items-center gap-5 ${scrolled ? "text-charcoal/75" : "text-cream/80"}`}>
+          <a href="https://wa.me/918189098662" target="_blank" rel="noreferrer" className={`flex items-center gap-1 hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>
             <span className="text-green-600">●</span> Whatsapp
           </a>
-          <a href="tel:1800121288800" className={`hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>Call Us</a>
-          <a href="#view-360" className={`flex items-center gap-1 hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>🌐 360°</a>
-          <div className={`h-3 w-[1px] ${scrolled ? "bg-zinc-300" : "bg-zinc-600"}`} />
+          <a href="tel:1800121288800" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>Call Us</a>
+          <div className={`h-3 w-px ${scrolled ? "bg-gold/20" : "bg-white/20"}`} />
           <div className="flex items-center gap-3 text-sm">
-            <a href="#" className={`hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>facebook</a>
-            <a href="#" className={`hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>x</a>
-            <a href="#" className={`hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>linkedin</a>
-            <a href="#" className={`hover:opacity-80 ${scrolled ? "text-zinc-900" : "text-white"}`}>instagram</a>
+            <a href="https://www.facebook.com/majorsdsamc/" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>facebook</a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>x</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>linkedin</a>
+            <a href="https://www.instagram.com/majorsdsinghpg/" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>instagram</a>
           </div>
         </div>
       </div>
@@ -88,7 +87,7 @@ export default function Navbar() {
       {/* ========================================================================= */}
       <div 
         className={`w-full px-4 py-3 sm:px-6 lg:px-12 flex items-center justify-between border-b transition-all duration-300 ${
-          scrolled || open ? "bg-[#FDFBF7]/95 backdrop-blur-md border-zinc-200 text-zinc-900" : "bg-black/10 border-white/5 text-white"
+          scrolled || open ? "bg-cream/95 backdrop-blur-md border-gold/20 text-charcoal" : "bg-black/10 border-white/5 text-white"
         }`}
       >
         {/* Logo Branding */}
@@ -96,44 +95,37 @@ export default function Navbar() {
           <img
             src="/MAJOR-SD-SINGH-AYURVEDIC-MEDICAL-COLLEGE.png"
             alt="Institution Logo"
-            className={`h-10 sm:h-14 lg:h-16 w-auto object-contain transition-all duration-300 ${scrolled || open ? "brightness-100 contrast-105 filter invert-0" : ""}`}
+            className={`h-10 sm:h-14 lg:h-16 w-auto object-contain rounded-sm transition-all duration-300 ${scrolled || open ? "brightness-100 contrast-105 filter invert-0" : ""}`}
             loading="eager"
           />
         </a>
 
         {/* Desktop Mid-links & Admission block */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-          <div className={`flex items-center gap-4 xl:gap-5 text-xs font-semibold tracking-wider uppercase transition-colors ${scrolled ? "text-zinc-700" : "text-zinc-200"}`}>
-            <a href="#campuses" className="hover:text-red-600 transition-colors">Campuses</a>
-            <a href="#international" className="hover:text-red-600 transition-colors">International</a>
-            <a href="#library" className="hover:text-red-600 transition-colors">Library</a>
-            <a href="#services" className="hover:text-red-600 transition-colors">Student Services</a>
-            <a href="#career" className="hover:text-red-600 transition-colors">Career</a>
-            <a href="#blogs" className="hover:text-red-600 transition-colors">Blogs</a>
-            <a href="#contact" className="hover:text-red-600 transition-colors">Contact Us</a>
+          <div className={`flex items-center gap-4 xl:gap-5 text-xs font-semibold tracking-wider uppercase transition-colors ${scrolled ? "text-charcoal/80" : "text-cream/90"}`}>
+            <a href="#about" className="hover:text-gold transition-colors">About</a>
+            <a href="#courses" className="hover:text-gold transition-colors">Courses</a>
+            <a href="#facilities" className="hover:text-gold transition-colors">Facilities</a>
+            <a href="#admissions" className="hover:text-gold transition-colors">Admissions</a>
+            <a href="#lead" className="hover:text-gold transition-colors">Apply Now</a>
+            <a href="https://blogs.majorsdsinghpgamc.in/" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">Blogs</a>
+            <a href="#contact" className="hover:text-gold transition-colors">Contact Us</a>
           </div>
 
           <a 
             href="tel:1800121288800"
-            className="bg-red-600 hover:bg-red-700 text-white flex items-center gap-3 px-5 py-2.5 rounded shadow-md transition-colors"
+            className="bg-gold hover:bg-gold-dark text-charcoal-deep flex items-center gap-3 px-5 py-2.5 rounded shadow-md transition-colors"
           >
             <div className="p-1.5 bg-white/20 rounded-full">
-              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-charcoal-deep" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
             </div>
             <div className="flex flex-col text-left">
-              <span className="text-[10px] uppercase tracking-widest text-red-100 font-bold">Admission Helpline</span>
+              <span className="text-[10px] uppercase tracking-widest text-charcoal/70 font-bold">Admission Helpline</span>
               <span className="text-sm font-black tracking-wide">1800121288800</span>
             </div>
           </a>
-
-          <button className={`flex flex-col items-center gap-0.5 justify-center transition-colors ${scrolled ? "text-zinc-600 hover:text-zinc-950" : "text-zinc-300 hover:text-white"}`} aria-label="Search">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <span className="text-[9px] uppercase tracking-widest font-bold">Search</span>
-          </button>
         </div>
 
         {/* Mobile Interactive Trigger */}
@@ -141,8 +133,8 @@ export default function Navbar() {
           onClick={() => setOpen((prev) => !prev)}
           className={`lg:hidden p-2 rounded-md transition-all ${
             scrolled || open 
-              ? "text-zinc-900 bg-zinc-200/80 hover:bg-zinc-200" 
-              : "text-white bg-zinc-800/80 hover:bg-zinc-700 backdrop-blur-sm border border-white/10"
+              ? "text-charcoal bg-gold/10 hover:bg-gold/20" 
+              : "text-white bg-charcoal/80 hover:bg-charcoal/90 backdrop-blur-sm border border-white/10"
           }`}
           aria-label="Toggle Menu"
           aria-expanded={open}
@@ -162,7 +154,7 @@ export default function Navbar() {
       {/* ========================================================================= */}
       <div 
         className={`hidden lg:flex w-full items-center justify-center border-b transition-all duration-300 ${
-          scrolled ? "bg-zinc-100 border-zinc-200" : "bg-black/20 border-white/5"
+          scrolled ? "bg-cream/95 border-gold/20" : "bg-charcoal-deep/45 border-white/5"
         }`}
       >
         <div className="flex items-center justify-center max-w-7xl w-full text-sm font-bold tracking-widest uppercase">
@@ -172,17 +164,17 @@ export default function Navbar() {
                 href={l.href}
                 className={`px-6 py-4 flex items-center gap-1.5 transition-all duration-200 group ${
                   scrolled 
-                    ? "text-zinc-800 hover:bg-zinc-200/60 hover:text-red-700" 
-                    : "text-zinc-100 hover:bg-black/30 hover:text-white"
+                    ? "text-charcoal hover:bg-gold/10 hover:text-gold-dark" 
+                    : "text-cream/90 hover:bg-gold/15 hover:text-gold"
                 }`}
               >
                 <span>{l.label}</span>
-                <svg className={`w-3 h-3 transition-transform duration-200 group-hover:translate-y-0.5 ${scrolled ? "text-zinc-500 group-hover:text-red-700" : "text-zinc-300 group-hover:text-white"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-3 h-3 transition-transform duration-200 group-hover:translate-y-0.5 ${scrolled ? "text-gold-dark/60 group-hover:text-gold-dark" : "text-gold/70 group-hover:text-gold"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
               {idx < NAV_LINKS.length - 1 && (
-                <div className={`h-6 w-[1px] self-center ${scrolled ? "bg-zinc-300" : "bg-white/10"}`} />
+                <div className={`h-6 w-[1px] self-center ${scrolled ? "bg-gold/20" : "bg-white/10"}`} />
               )}
             </div>
           ))}
@@ -199,18 +191,18 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 right-0 bottom-0 top-[65px] sm:top-[81px] z-40 w-full bg-[#FDFBF7] border-t border-zinc-200 overflow-y-auto lg:hidden shadow-2xl"
+            className="fixed left-0 right-0 bottom-0 top-[65px] sm:top-[81px] z-40 w-full bg-cream border-t border-gold/20 overflow-y-auto lg:hidden shadow-2xl"
           >
             <div className="px-4 py-6 space-y-6 pb-12">
               {/* Main Nav Links Stack */}
               <div className="flex flex-col space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest mb-2 px-2 text-zinc-400">Main Navigation</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest mb-2 px-2 text-gold-dark/70">Main Navigation</span>
                 {NAV_LINKS.map((l) => (
                   <a
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-3 text-base font-bold tracking-wide text-zinc-800 hover:bg-zinc-100 hover:text-red-600 transition-colors"
+                    className="block rounded-lg px-3 py-3 text-base font-bold tracking-wide text-charcoal hover:bg-gold/10 hover:text-gold-dark transition-colors"
                   >
                     {l.label}
                   </a>
@@ -218,23 +210,24 @@ export default function Navbar() {
               </div>
 
               {/* Auxiliary Quick Links Grid */}
-              <div className="border-t border-zinc-200 pt-5">
-                <span className="text-[10px] font-bold uppercase tracking-widest mb-3 block px-2 text-zinc-400">Information & Resources</span>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-semibold uppercase px-2 text-zinc-700">
-                  <a href="#campuses" onClick={() => setOpen(false)} className="py-2 hover:text-red-600">Campuses</a>
-                  <a href="#international" onClick={() => setOpen(false)} className="py-2 hover:text-red-600">International</a>
-                  <a href="#library" onClick={() => setOpen(false)} className="py-2 hover:text-red-600">Library</a>
-                  <a href="#services" onClick={() => setOpen(false)} className="py-2 hover:text-red-600">Services</a>
-                  <a href="#blogs" onClick={() => setOpen(false)} className="py-2 hover:text-red-600">Blogs</a>
-                  <a href="#contact" onClick={() => setOpen(false)} className="py-2 hover:text-red-600">Contact Us</a>
+              <div className="border-t border-gold/20 pt-5">
+                <span className="text-[10px] font-bold uppercase tracking-widest mb-3 block px-2 text-gold-dark/70">Information & Resources</span>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-semibold uppercase px-2 text-charcoal/75">
+                  <a href="#about" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">About</a>
+                  <a href="#courses" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Courses</a>
+                  <a href="#facilities" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Facilities</a>
+                  <a href="#admissions" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Admissions</a>
+                  <a href="#lead" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Apply Now</a>
+                  <a href="https://blogs.majorsdsinghpgamc.in/" target="_blank" rel="noreferrer" className="py-2 hover:text-gold-dark">Blogs</a>
+                  <a href="#contact" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Contact Us</a>
                 </div>
               </div>
 
               {/* Action Banners & Contact Channels */}
-              <div className="grid grid-cols-1 gap-3 pt-5 border-t border-zinc-200">
+              <div className="grid grid-cols-1 gap-3 pt-5 border-t border-gold/20">
                 <a
                   href="tel:1800121288800"
-                  className="bg-red-600 text-white flex items-center justify-center gap-3 py-3.5 rounded-xl font-bold shadow-md hover:bg-red-700 transition-colors"
+                  className="bg-gold text-charcoal-deep flex items-center justify-center gap-3 py-3.5 rounded-xl font-bold shadow-md hover:bg-gold-dark hover:text-white transition-colors"
                 >
                   <span className="text-xs uppercase tracking-wider opacity-90">Helpline:</span>
                   <span className="text-base tracking-wide">1800121288800</span>
@@ -245,14 +238,14 @@ export default function Navbar() {
                     href="https://wa.me/918189098662"
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-zinc-200 text-zinc-900 text-center py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-zinc-300 transition-colors"
+                    className="bg-white text-charcoal text-center py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 border border-gold/20 hover:bg-gold/10 transition-colors"
                   >
                     <span className="text-green-600 text-sm">●</span> WhatsApp
                   </a>
                   <a
-                    href="#register"
+                    href="#lead"
                     onClick={() => setOpen(false)}
-                    className="bg-zinc-900 text-white text-center py-3 rounded-xl text-xs font-bold hover:bg-zinc-800 transition-colors"
+                    className="bg-charcoal-deep text-cream text-center py-3 rounded-xl text-xs font-bold hover:bg-charcoal transition-colors"
                   >
                     Register Now
                   </a>

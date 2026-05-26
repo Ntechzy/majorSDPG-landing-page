@@ -83,7 +83,7 @@ export default function Hero() {
             {/* College Name Header */}
             <motion.h1
               variants={item}
-              className="mb-6 max-w-2xl text-xl font-medium tracking-wide text-gray-200 uppercase sm:text-2xl md:text-3xl border-l-4 border-red-600 pl-4"
+              className="mb-6 max-w-2xl text-xl font-medium tracking-wide text-cream/85 uppercase sm:text-2xl md:text-3xl border-l-4 border-gold pl-4"
             >
               Major S. D. Singh PG <br />
               <span className="text-white font-semibold">Ayurvedic Medical College</span>
@@ -92,7 +92,7 @@ export default function Hero() {
             {/* Tagline */}
             <motion.h3
               variants={item}
-              className="mb-4 max-w-xl text-base font-semibold italic text-amber-400 sm:text-lg"
+              className="mb-4 max-w-xl text-base font-semibold italic text-gold sm:text-lg"
             >
               "Classical Ayurveda, clinical confidence, and research-minded care."
             </motion.h3>
@@ -111,7 +111,7 @@ export default function Hero() {
             <motion.div variants={item} className="mb-10 flex flex-wrap items-center gap-4">
               <button
                 onClick={scrollToLeadForm}
-                className="group inline-flex items-center justify-center gap-3 rounded-md bg-red-600 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-red-700 active:scale-95 shadow-lg shadow-red-900/40"
+                className="group inline-flex items-center justify-center gap-3 rounded-md bg-gold px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-charcoal-deep transition-all duration-300 hover:bg-gold-dark hover:text-white active:scale-95 shadow-lg shadow-gold-dark/35"
               >
                 <span>Apply Today</span>
                 <svg
@@ -163,7 +163,7 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-md overflow-hidden rounded-lg bg-white p-1 shadow-2xl shadow-black/80">
               {/* Form container header section mirroring the screenshot layout */}
-              <div className="bg-neutral-900 px-4 py-5 text-center">
+              <div className="bg-charcoal-deep px-4 py-5 text-center">
                 {/* <p className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
                   Admissions Session 2026–2027
                 </p> */}
@@ -191,7 +191,7 @@ export default function Hero() {
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                idx === currentSlide ? "w-8 bg-red-600" : "w-2 bg-white/40 hover:bg-white/70"
+                idx === currentSlide ? "w-8 bg-gold" : "w-2 bg-white/40 hover:bg-gold/80"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
