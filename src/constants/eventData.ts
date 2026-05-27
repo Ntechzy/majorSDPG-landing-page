@@ -11,7 +11,7 @@ export const events: EventCard[] = [
   {
     id: 1,
     title: "Ashvamedha Fest",
-    image: "/event/e9.webp",
+    image: "/event/e14.jpeg",
     link: "https://www.facebook.com/share/p/1H41RyUZV6/",
     category: "Technology",
     date: "February 2026",
