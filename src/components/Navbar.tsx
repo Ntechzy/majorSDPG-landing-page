@@ -113,7 +113,7 @@ export default function Navbar() {
           </div>
 
           <a 
-            href="tel:1800121288800"
+            href="tel:917300864280"
             className="bg-gold hover:bg-gold-dark text-charcoal-deep flex items-center gap-3 px-5 py-2.5 rounded shadow-md transition-colors"
           >
             <div className="p-1.5 bg-white/20 rounded-full">
@@ -123,7 +123,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col text-left">
               <span className="text-[10px] uppercase tracking-widest text-charcoal/70 font-bold">Admission Helpline</span>
-              <span className="text-sm font-black tracking-wide">1800121288800</span>
+              <span className="text-sm font-black tracking-wide">+91-7300864280</span>
             </div>
           </a>
         </div>
