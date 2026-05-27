@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NAV_LINKS } from "@/constants/data"; 
 
+const isExternalLink = (href: string) => href.startsWith("http");
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -100,16 +102,24 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop Mid-links & Admission block */}
+        {/* Desktop Admissions Snapshot & Action Block */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-          <div className={`flex items-center gap-4 xl:gap-5 text-xs font-semibold tracking-wider uppercase transition-colors ${scrolled ? "text-charcoal/80" : "text-cream/90"}`}>
-            <a href="#about" className="hover:text-gold transition-colors">About</a>
-            <a href="#courses" className="hover:text-gold transition-colors">Courses</a>
-            <a href="#facilities" className="hover:text-gold transition-colors">Facilities</a>
-            <a href="#admissions" className="hover:text-gold transition-colors">Admissions</a>
-            <a href="#lead" className="hover:text-gold transition-colors">Apply Now</a>
-            <a href="https://blogs.majorsdsinghpgamc.in/" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">Blogs</a>
-            <a href="#contact" className="hover:text-gold transition-colors">Contact Us</a>
+          <div className={`flex items-center gap-4 xl:gap-5 rounded border px-4 py-2 transition-colors ${
+            scrolled ? "border-gold/20 bg-white/45 text-charcoal" : "border-white/15 bg-white/10 text-cream"
+          }`}>
+            <div className="flex flex-col leading-tight">
+              <span className={`text-[10px] uppercase tracking-widest font-bold ${scrolled ? "text-charcoal/60" : "text-cream/70"}`}>
+                Admissions Open
+              </span>
+              <span className="text-sm font-black tracking-wide">2026-27 Session</span>
+            </div>
+            <div className={`h-8 w-px ${scrolled ? "bg-gold/25" : "bg-white/20"}`} />
+            <div className="flex flex-col leading-tight">
+              <span className={`text-[10px] uppercase tracking-widest font-bold ${scrolled ? "text-charcoal/60" : "text-cream/70"}`}>
+                Programs
+              </span>
+              <span className="text-sm font-black tracking-wide">BAMS + MS</span>
+            </div>
           </div>
 
           <a 
@@ -162,6 +172,8 @@ export default function Navbar() {
             <div key={l.href} className="flex items-center">
               <a
                 href={l.href}
+                target={isExternalLink(l.href) ? "_blank" : undefined}
+                rel={isExternalLink(l.href) ? "noreferrer" : undefined}
                 className={`px-6 py-4 flex items-center gap-1.5 transition-all duration-200 group ${
                   scrolled 
                     ? "text-charcoal hover:bg-gold/10 hover:text-gold-dark" 
@@ -201,6 +213,8 @@ export default function Navbar() {
                   <a
                     key={l.href}
                     href={l.href}
+                    target={isExternalLink(l.href) ? "_blank" : undefined}
+                    rel={isExternalLink(l.href) ? "noreferrer" : undefined}
                     onClick={() => setOpen(false)}
                     className="block rounded-lg px-3 py-3 text-base font-bold tracking-wide text-charcoal hover:bg-gold/10 hover:text-gold-dark transition-colors"
                   >
@@ -209,28 +223,53 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Auxiliary Quick Links Grid */}
+              {/* Contact & Social Quick Links */}
               <div className="border-t border-gold/20 pt-5">
-                <span className="text-[10px] font-bold uppercase tracking-widest mb-3 block px-2 text-gold-dark/70">Information & Resources</span>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-semibold uppercase px-2 text-charcoal/75">
-                  <a href="#about" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">About</a>
-                  <a href="#courses" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Courses</a>
-                  <a href="#facilities" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Facilities</a>
-                  <a href="#admissions" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Admissions</a>
-                  <a href="#lead" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Apply Now</a>
-                  <a href="https://blogs.majorsdsinghpgamc.in/" target="_blank" rel="noreferrer" className="py-2 hover:text-gold-dark">Blogs</a>
-                  <a href="#contact" onClick={() => setOpen(false)} className="py-2 hover:text-gold-dark">Contact Us</a>
+                <span className="text-[10px] font-bold uppercase tracking-widest mb-3 block px-2 text-gold-dark/70">Connect With Us</span>
+                <div className="grid grid-cols-2 gap-3 text-xs font-bold uppercase tracking-wide text-charcoal/75">
+                  <a
+                    href="https://www.facebook.com/majorsdsamc/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    Facebook
+                  </a>
+                  <a
+                    href="https://www.instagram.com/majorsdsinghpg/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    href="https://x.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    X
+                  </a>
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
               </div>
 
               {/* Action Banners & Contact Channels */}
               <div className="grid grid-cols-1 gap-3 pt-5 border-t border-gold/20">
                 <a
-                  href="tel:1800121288800"
+                  href="tel:917300864280"
                   className="bg-gold text-charcoal-deep flex items-center justify-center gap-3 py-3.5 rounded-xl font-bold shadow-md hover:bg-gold-dark hover:text-white transition-colors"
                 >
                   <span className="text-xs uppercase tracking-wider opacity-90">Helpline:</span>
-                  <span className="text-base tracking-wide">1800121288800</span>
+                  <span className="text-base tracking-wide">+91-7300864280</span>
                 </a>
                 
                 <div className="grid grid-cols-2 gap-3">
