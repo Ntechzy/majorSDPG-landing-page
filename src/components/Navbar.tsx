@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NAV_LINKS } from "@/constants/data";
 
+const isExternalLink = (href: string) => href.startsWith("http");
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -20,123 +22,278 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // Prevent background scrolling when mobile menu drawer is wide open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <motion.nav
-      initial={{ y: -80 }}
+      initial={{ y: -120 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-gold/30 bg-charcoal-deep/90 py-1 backdrop-blur-md"
-          : "bg-transparent py-3"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 flex flex-col w-full font-sans transition-all duration-300 ${scrolled || open
+          ? "shadow-md bg-cream"
+          : "bg-transparent"
+        }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-3 sm:h-20 sm:px-6 lg:px-8">
-        <a
-          href="#home"
-          className="group flex min-w-0 flex-1 items-center lg:flex-none"
-        >
+      {/* ========================================================================= */}
+      {/* TIER 1: TOP UTILITY & TICKER BAR (Hidden on Mobile)                       */}
+      {/* ========================================================================= */}
+      <div
+        className={`hidden lg:flex w-full h-10 border-b text-xs items-center justify-between px-6 xl:px-12 transition-all duration-300 ${scrolled
+            ? "border-gold/15 bg-cream/90 text-charcoal/80"
+            : "border-white/10 bg-black/20 text-white"
+          }`}
+      >
+        {/* Left Side: Campaign Ticker */}
+        <div className="flex items-center gap-3">
+          <span className={`tracking-wide font-light ${scrolled ? "text-charcoal/70" : "text-cream/80"}`}>
+            Register Now for Joint Campus Placement Programme
+          </span>
+          <a
+            href="#lead"
+            className="bg-gold hover:bg-gold-dark text-charcoal-deep font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider transition-colors"
+          >
+            Register Now
+          </a>
+        </div>
+
+        {/* Right Side: Quick Links & Icons */}
+        <div className={`flex items-center gap-5 ${scrolled ? "text-charcoal/75" : "text-cream/80"}`}>
+          <a href="https://wa.me/918189098662" target="_blank" rel="noreferrer" className={`flex items-center gap-1 hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>
+            <span className="text-green-600">●</span> Whatsapp
+          </a>
+          <a href="tel:1800121288800" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>Call Us</a>
+          <div className={`h-3 w-px ${scrolled ? "bg-gold/20" : "bg-white/20"}`} />
+          <div className="flex items-center gap-3 text-sm">
+            <a href="https://www.facebook.com/majorsdsamc/" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>facebook</a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>x</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>linkedin</a>
+            <a href="https://www.instagram.com/majorsdsinghpg/" target="_blank" rel="noreferrer" className={`hover:opacity-80 ${scrolled ? "text-charcoal" : "text-white"}`}>instagram</a>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
+      {/* TIER 2: MAIN BRANDING & PRIMARY ACTIONS BAR                              */}
+      {/* ========================================================================= */}
+      {/* ========================================================================= */}
+      {/* ========================================================================= */}
+      <div
+        className={`w-full px-4 py-3 sm:px-6 lg:px-12 flex items-center justify-between border-b transition-all duration-300 ${scrolled || open ? "bg-cream/95 backdrop-blur-md border-gold/20 text-charcoal" : "bg-black/10 border-white/5 text-white"
+          }`}
+      >
+        {/* Logo Branding */}
+        <a href="#home" className="flex items-center max-w-50 sm:max-w-70 lg:max-w-[320px] shrink-0">
           <img
             src="/MAJOR-SD-SINGH-AYURVEDIC-MEDICAL-COLLEGE.png"
-            alt="Major S. D. Singh Ayurvedic Medical College logo"
-            className="h-10 w-auto max-w-55 shrink-0 object-contain sm:h-12 sm:max-w-70 rounded-md"
+            alt="Institution Logo"
+            className={`h-10 sm:h-14 lg:h-16 w-auto object-contain rounded-sm transition-all duration-300 ${scrolled || open ? "brightness-100 contrast-105 filter invert-0" : ""}`}
             loading="eager"
-            decoding="async"
-            fetchPriority="high"
           />
         </a>
 
-        <div className="hidden items-center gap-6 lg:flex xl:gap-8">
-          {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="whitespace-nowrap text-sm font-medium tracking-wide text-cream/90 transition-colors hover:text-gold"
-            >
-              {l.label}
-            </a>
-          ))}
-          <div className="flex items-center gap-2 xl:gap-3">
-            <a
-              href="https://wa.me/918189098662"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whitespace-nowrap rounded-full border border-gold/50 px-4 py-2.5 font-semibold text-gold transition-all hover:scale-105 hover:bg-gold/10 active:scale-95 xl:px-5"
-            >
-              WhatsApp
-            </a>
-            <a
-              href="#lead"
-              className="whitespace-nowrap rounded-full bg-gold px-5 py-2.5 font-semibold text-charcoal shadow-lg shadow-gold/20 transition-all hover:scale-105 hover:bg-gold-dark active:scale-95 xl:px-6"
-            >
-              Apply Now →
-            </a>
-          </div>
+        {/* Center Tagline Block (Fills the center empty space perfectly) */}
+        <div className="hidden md:flex flex-col items-center justify-center text-center mx-auto px-4 dynamic-middle-space">
+          <span className={`text-[10px] lg:text-xs uppercase tracking-[0.25em] font-bold ${scrolled || open ? "text-charcoal/50" : "text-white/50"} mb-0.5`}>
+            Est. Heritage
+          </span>
+          <span className="text-lg lg:text-xl font-black tracking-wide text-[#d4af37] drop-shadow-sm">
+            Oldest College in UP
+          </span>
         </div>
 
+        {/* Desktop Admissions Snapshot & Action Block */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
+          <div className={`flex items-center gap-4 xl:gap-5 rounded border px-4 py-2 transition-colors ${scrolled ? "border-gold/20 bg-white/45 text-charcoal" : "border-white/15 bg-white/10 text-cream"
+            }`}>
+            <div className="flex flex-col leading-tight">
+              <span className={`text-[10px] uppercase tracking-widest font-bold ${scrolled ? "text-charcoal/60" : "text-cream/70"}`}>
+                Admissions Open
+              </span>
+              <span className="text-sm font-black tracking-wide">2026-27 Session</span>
+            </div>
+            <div className={`h-8 w-px ${scrolled ? "bg-gold/25" : "bg-white/20"}`} />
+            <div className="flex flex-col leading-tight">
+              <span className={`text-[10px] uppercase tracking-widest font-bold ${scrolled ? "text-charcoal/60" : "text-cream/70"}`}>
+                Programs
+              </span>
+              <span className="text-sm font-black tracking-wide">BAMS + MS</span>
+            </div>
+          </div>
+
+          <a
+            href="tel:917300864280"
+            className="bg-gold hover:bg-gold-dark text-charcoal-deep flex items-center gap-3 px-5 py-2.5 rounded shadow-md transition-colors"
+          >
+            <div className="p-1.5 bg-white/20 rounded-full">
+              <svg className="w-4 h-4 text-charcoal-deep" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-[10px] uppercase tracking-widest text-charcoal/70 font-bold">Admission Helpline</span>
+              <span className="text-sm font-black tracking-wide">+91-7300864280</span>
+            </div>
+          </a>
+        </div>
+
+        {/* Mobile Interactive Trigger */}
         <button
           onClick={() => setOpen((prev) => !prev)}
-          className="shrink-0 rounded-lg p-2 text-gold transition-colors hover:bg-gold/10 lg:hidden"
-          aria-label="Menu"
+          className={`lg:hidden p-2 rounded-md transition-all shrink-0 ${scrolled || open
+              ? "text-charcoal bg-gold/10 hover:bg-gold/20"
+              : "text-white bg-charcoal/80 hover:bg-charcoal/90 backdrop-blur-sm border border-white/10"
+            }`}
+          aria-label="Toggle Menu"
           aria-expanded={open}
         >
-          <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
       </div>
 
+      {/* ========================================================================= */}
+      {/* TIER 3: BOTTOM MEGA NAVIGATION BAR (Hidden on Mobile)                     */}
+      {/* ========================================================================= */}
+      <div
+        className={`hidden lg:flex w-full items-center justify-center border-b transition-all duration-300 ${scrolled ? "bg-cream/95 border-gold/20" : "bg-charcoal-deep/45 border-white/5"
+          }`}
+      >
+        <div className="flex items-center justify-center max-w-7xl w-full text-sm font-bold tracking-widest uppercase">
+          {NAV_LINKS.map((l, idx) => (
+            <div key={l.href} className="flex items-center">
+              <a
+                href={l.href}
+                target={isExternalLink(l.href) ? "_blank" : undefined}
+                rel={isExternalLink(l.href) ? "noreferrer" : undefined}
+                className={`px-6 py-4 flex items-center gap-1.5 transition-all duration-200 group ${scrolled
+                    ? "text-charcoal hover:bg-gold/10 hover:text-gold-dark"
+                    : "text-cream/90 hover:bg-gold/15 hover:text-gold"
+                  }`}
+              >
+                <span>{l.label}</span>
+                <svg className={`w-3 h-3 transition-transform duration-200 group-hover:translate-y-0.5 ${scrolled ? "text-gold-dark/60 group-hover:text-gold-dark" : "text-gold/70 group-hover:text-gold"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              {idx < NAV_LINKS.length - 1 && (
+                <div className={`h-6 w-px self-center ${scrolled ? "bg-gold/20" : "bg-white/10"}`} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
+      {/* RESPONSIVE DRAWER OVERLAY (Full Viewport Fix for Mobile & Tablet)         */}
+      {/* ========================================================================= */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-gold/20 bg-charcoal-deep/98 backdrop-blur-lg lg:hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed left-0 right-0 bottom-0 top-16.25 sm:top-20.25 z-40 w-full bg-cream border-t border-gold/20 overflow-y-auto lg:hidden shadow-2xl"
           >
-            <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-5 sm:max-h-[calc(100vh-5rem)] sm:px-6 sm:py-7">
-              {NAV_LINKS.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-white/5 py-3 text-base font-medium text-cream/90 hover:text-gold last:border-none sm:text-lg"
-                >
-                  {l.label}
-                </a>
-              ))}
+            <div className="px-4 py-6 space-y-6 pb-12">
+              {/* Main Nav Links Stack */}
+              <div className="flex flex-col space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-widest mb-2 px-2 text-gold-dark/70">Main Navigation</span>
+                {NAV_LINKS.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target={isExternalLink(l.href) ? "_blank" : undefined}
+                    rel={isExternalLink(l.href) ? "noreferrer" : undefined}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-lg px-3 py-3 text-base font-bold tracking-wide text-charcoal hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
 
-              <div className="grid grid-cols-1 gap-3 pt-6 sm:grid-cols-2">
+              {/* Contact & Social Quick Links */}
+              <div className="border-t border-gold/20 pt-5">
+                <span className="text-[10px] font-bold uppercase tracking-widest mb-3 block px-2 text-gold-dark/70">Connect With Us</span>
+                <div className="grid grid-cols-2 gap-3 text-xs font-bold uppercase tracking-wide text-charcoal/75">
+                  <a
+                    href="https://www.facebook.com/majorsdsamc/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    Facebook
+                  </a>
+                  <a
+                    href="https://www.instagram.com/majorsdsinghpg/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    href="https://x.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    X
+                  </a>
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-gold/20 bg-white px-3 py-3 text-center hover:bg-gold/10 hover:text-gold-dark transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              {/* Action Banners & Contact Channels */}
+              <div className="grid grid-cols-1 gap-3 pt-5 border-t border-gold/20">
                 <a
-                  href="https://wa.me/918189098662"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="block w-full rounded-xl border border-gold/40 px-5 py-4 text-center font-bold text-gold transition-transform active:scale-[0.98]"
+                  href="tel:917300864280"
+                  className="bg-gold text-charcoal-deep flex items-center justify-center gap-3 py-3.5 rounded-xl font-bold shadow-md hover:bg-gold-dark hover:text-white transition-colors"
                 >
-                  WhatsApp
+                  <span className="text-xs uppercase tracking-wider opacity-90">Helpline:</span>
+                  <span className="text-base tracking-wide">+91-7300864280</span>
                 </a>
-                <a
-                  href="#lead"
-                  onClick={() => setOpen(false)}
-                  className="block w-full rounded-xl bg-gold px-5 py-4 text-center font-bold text-charcoal shadow-lg transition-transform active:scale-[0.98]"
-                >
-                  Apply Now →
-                </a>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href="https://wa.me/918189098662"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="bg-white text-charcoal text-center py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 border border-gold/20 hover:bg-gold/10 transition-colors"
+                  >
+                    <span className="text-green-600 text-sm">●</span> WhatsApp
+                  </a>
+                  <a
+                    href="#lead"
+                    onClick={() => setOpen(false)}
+                    className="bg-charcoal-deep text-cream text-center py-3 rounded-xl text-xs font-bold hover:bg-charcoal transition-colors"
+                  >
+                    Register Now
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

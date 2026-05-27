@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import EventsSection from "@/components/EventsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import StatsSection from "@/components/StatsSection";
 
 const TrustBar = lazy(() => import("@/components/TrustBar"));
 const About = lazy(() => import("@/components/About"));
@@ -67,6 +68,7 @@ function Index() {
       <Suspense fallback={null}>
         <TrustBar />
         <About />
+        <StatsSection/>
         <Courses />
         <Facilities />
         <EventsSection/>
