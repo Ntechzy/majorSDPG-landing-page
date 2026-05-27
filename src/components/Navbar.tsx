@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { NAV_LINKS } from "@/constants/data"; 
+import { NAV_LINKS } from "@/constants/data";
 
 const isExternalLink = (href: string) => href.startsWith("http");
 
@@ -39,21 +39,19 @@ export default function Navbar() {
       initial={{ y: -120 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 flex flex-col w-full font-sans transition-all duration-300 ${
-        scrolled || open
-          ? "shadow-md bg-cream" 
+      className={`fixed top-0 left-0 right-0 z-50 flex flex-col w-full font-sans transition-all duration-300 ${scrolled || open
+          ? "shadow-md bg-cream"
           : "bg-transparent"
-      }`}
+        }`}
     >
       {/* ========================================================================= */}
       {/* TIER 1: TOP UTILITY & TICKER BAR (Hidden on Mobile)                       */}
       {/* ========================================================================= */}
-      <div 
-        className={`hidden lg:flex w-full h-10 border-b text-xs items-center justify-between px-6 xl:px-12 transition-all duration-300 ${
-          scrolled 
-            ? "border-gold/15 bg-cream/90 text-charcoal/80" 
+      <div
+        className={`hidden lg:flex w-full h-10 border-b text-xs items-center justify-between px-6 xl:px-12 transition-all duration-300 ${scrolled
+            ? "border-gold/15 bg-cream/90 text-charcoal/80"
             : "border-white/10 bg-black/20 text-white"
-        }`}
+          }`}
       >
         {/* Left Side: Campaign Ticker */}
         <div className="flex items-center gap-3">
@@ -87,13 +85,14 @@ export default function Navbar() {
       {/* ========================================================================= */}
       {/* TIER 2: MAIN BRANDING & PRIMARY ACTIONS BAR                              */}
       {/* ========================================================================= */}
-      <div 
-        className={`w-full px-4 py-3 sm:px-6 lg:px-12 flex items-center justify-between border-b transition-all duration-300 ${
-          scrolled || open ? "bg-cream/95 backdrop-blur-md border-gold/20 text-charcoal" : "bg-black/10 border-white/5 text-white"
-        }`}
+      {/* ========================================================================= */}
+      {/* ========================================================================= */}
+      <div
+        className={`w-full px-4 py-3 sm:px-6 lg:px-12 flex items-center justify-between border-b transition-all duration-300 ${scrolled || open ? "bg-cream/95 backdrop-blur-md border-gold/20 text-charcoal" : "bg-black/10 border-white/5 text-white"
+          }`}
       >
         {/* Logo Branding */}
-        <a href="#home" className="flex items-center max-w-[200px] sm:max-w-[280px] lg:max-w-[320px]">
+        <a href="#home" className="flex items-center max-w-50 sm:max-w-70 lg:max-w-[320px] shrink-0">
           <img
             src="/MAJOR-SD-SINGH-AYURVEDIC-MEDICAL-COLLEGE.png"
             alt="Institution Logo"
@@ -102,11 +101,20 @@ export default function Navbar() {
           />
         </a>
 
+        {/* Center Tagline Block (Fills the center empty space perfectly) */}
+        <div className="hidden md:flex flex-col items-center justify-center text-center mx-auto px-4 dynamic-middle-space">
+          <span className={`text-[10px] lg:text-xs uppercase tracking-[0.25em] font-bold ${scrolled || open ? "text-charcoal/50" : "text-white/50"} mb-0.5`}>
+            Est. Heritage
+          </span>
+          <span className="text-lg lg:text-xl font-black tracking-wide text-[#d4af37] drop-shadow-sm">
+            Oldest College in UP
+          </span>
+        </div>
+
         {/* Desktop Admissions Snapshot & Action Block */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-          <div className={`flex items-center gap-4 xl:gap-5 rounded border px-4 py-2 transition-colors ${
-            scrolled ? "border-gold/20 bg-white/45 text-charcoal" : "border-white/15 bg-white/10 text-cream"
-          }`}>
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
+          <div className={`flex items-center gap-4 xl:gap-5 rounded border px-4 py-2 transition-colors ${scrolled ? "border-gold/20 bg-white/45 text-charcoal" : "border-white/15 bg-white/10 text-cream"
+            }`}>
             <div className="flex flex-col leading-tight">
               <span className={`text-[10px] uppercase tracking-widest font-bold ${scrolled ? "text-charcoal/60" : "text-cream/70"}`}>
                 Admissions Open
@@ -122,7 +130,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a 
+          <a
             href="tel:917300864280"
             className="bg-gold hover:bg-gold-dark text-charcoal-deep flex items-center gap-3 px-5 py-2.5 rounded shadow-md transition-colors"
           >
@@ -141,11 +149,10 @@ export default function Navbar() {
         {/* Mobile Interactive Trigger */}
         <button
           onClick={() => setOpen((prev) => !prev)}
-          className={`lg:hidden p-2 rounded-md transition-all ${
-            scrolled || open 
-              ? "text-charcoal bg-gold/10 hover:bg-gold/20" 
+          className={`lg:hidden p-2 rounded-md transition-all shrink-0 ${scrolled || open
+              ? "text-charcoal bg-gold/10 hover:bg-gold/20"
               : "text-white bg-charcoal/80 hover:bg-charcoal/90 backdrop-blur-sm border border-white/10"
-          }`}
+            }`}
           aria-label="Toggle Menu"
           aria-expanded={open}
         >
@@ -162,10 +169,9 @@ export default function Navbar() {
       {/* ========================================================================= */}
       {/* TIER 3: BOTTOM MEGA NAVIGATION BAR (Hidden on Mobile)                     */}
       {/* ========================================================================= */}
-      <div 
-        className={`hidden lg:flex w-full items-center justify-center border-b transition-all duration-300 ${
-          scrolled ? "bg-cream/95 border-gold/20" : "bg-charcoal-deep/45 border-white/5"
-        }`}
+      <div
+        className={`hidden lg:flex w-full items-center justify-center border-b transition-all duration-300 ${scrolled ? "bg-cream/95 border-gold/20" : "bg-charcoal-deep/45 border-white/5"
+          }`}
       >
         <div className="flex items-center justify-center max-w-7xl w-full text-sm font-bold tracking-widest uppercase">
           {NAV_LINKS.map((l, idx) => (
@@ -174,11 +180,10 @@ export default function Navbar() {
                 href={l.href}
                 target={isExternalLink(l.href) ? "_blank" : undefined}
                 rel={isExternalLink(l.href) ? "noreferrer" : undefined}
-                className={`px-6 py-4 flex items-center gap-1.5 transition-all duration-200 group ${
-                  scrolled 
-                    ? "text-charcoal hover:bg-gold/10 hover:text-gold-dark" 
+                className={`px-6 py-4 flex items-center gap-1.5 transition-all duration-200 group ${scrolled
+                    ? "text-charcoal hover:bg-gold/10 hover:text-gold-dark"
                     : "text-cream/90 hover:bg-gold/15 hover:text-gold"
-                }`}
+                  }`}
               >
                 <span>{l.label}</span>
                 <svg className={`w-3 h-3 transition-transform duration-200 group-hover:translate-y-0.5 ${scrolled ? "text-gold-dark/60 group-hover:text-gold-dark" : "text-gold/70 group-hover:text-gold"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,7 +191,7 @@ export default function Navbar() {
                 </svg>
               </a>
               {idx < NAV_LINKS.length - 1 && (
-                <div className={`h-6 w-[1px] self-center ${scrolled ? "bg-gold/20" : "bg-white/10"}`} />
+                <div className={`h-6 w-px self-center ${scrolled ? "bg-gold/20" : "bg-white/10"}`} />
               )}
             </div>
           ))}
@@ -203,7 +208,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 right-0 bottom-0 top-[65px] sm:top-[81px] z-40 w-full bg-cream border-t border-gold/20 overflow-y-auto lg:hidden shadow-2xl"
+            className="fixed left-0 right-0 bottom-0 top-16.25 sm:top-20.25 z-40 w-full bg-cream border-t border-gold/20 overflow-y-auto lg:hidden shadow-2xl"
           >
             <div className="px-4 py-6 space-y-6 pb-12">
               {/* Main Nav Links Stack */}
@@ -271,7 +276,7 @@ export default function Navbar() {
                   <span className="text-xs uppercase tracking-wider opacity-90">Helpline:</span>
                   <span className="text-base tracking-wide">+91-7300864280</span>
                 </a>
-                
+
                 <div className="grid grid-cols-2 gap-3">
                   <a
                     href="https://wa.me/918189098662"

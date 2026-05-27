@@ -51,7 +51,7 @@ export default function LeadForm() {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
 
       {/* 3-Column Strip Layout */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-4 pt-12 md:pt-0">
         
 {/* 1. CONTENT CONTAINER (Left Side - Flex-1 automatically adjusts to remaining space) */}
         <motion.div
@@ -130,7 +130,7 @@ export default function LeadForm() {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="w-full lg:w-4/12 flex-shrink-0 max-w-md mx-auto order-1 lg:order-3 lg:pb-24 z-20"
+          className="w-full lg:w-4/12 shrink-0 max-w-md mx-auto order-1 lg:order-3 lg:pb-24 z-20"
         >
           <div className="overflow-hidden rounded-lg bg-white shadow-2xl shadow-black/80 border-4 border-[#d4af37]">
             <div className="bg-charcoal-deep px-4 py-4 text-center border-b border-gray-200">
@@ -140,7 +140,7 @@ export default function LeadForm() {
             </div>
             <div
               id={LEAD_FORM_DIV_ID}
-              className="h-[480px] w-full overflow-x-hidden overflow-y-auto bg-white p-2 [&_*]:max-w-full"
+              className="h-120 w-full overflow-x-hidden overflow-y-auto bg-white p-2 **:max-w-full"
             />
           </div>
         </motion.div>
