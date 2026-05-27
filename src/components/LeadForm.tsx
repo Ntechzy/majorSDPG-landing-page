@@ -105,14 +105,16 @@ export default function LeadForm() {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
+          className="relative w-full max-w-md justify-self-center overflow-hidden rounded-lg bg-white p-1 shadow-2xl shadow-black/80 lg:justify-self-end"
         >
-          <div className="mb-4 border-b border-gray-100 pb-4">
-            <h3 className="text-2xl font-bold text-gray-900">Request Free Counselling</h3>
+          <div className="bg-charcoal-deep px-4 py-5 text-center">
+            <h3 className="mt-1 text-sm font-extrabold uppercase tracking-tight text-white sm:text-base">
+              Request Free Counselling
+            </h3>
           </div>
           <div
             id={LEAD_FORM_DIV_ID}
-            className="h-160 w-full overflow-x-hidden overflow-y-hidden bg-white [&_*]:max-w-full sm:h-170"
+            className="h-120 w-full overflow-x-hidden overflow-y-auto bg-white [&_*]:max-w-full"
           />
         </motion.div>
       </div>
