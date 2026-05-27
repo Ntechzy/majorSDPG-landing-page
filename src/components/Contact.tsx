@@ -9,7 +9,7 @@ const CONTACT_ITEMS = [
     icon: FiPhone,
     label: "Direct Line",
     title: "Call Admissions",
-    lines: [{ text: "+91 8189098662", href: "tel:+918189098662" }],
+    lines: [{ text: "++91-7300864280", href: "tel:+917300864280" }],
   },
   {
     icon: FiMail,
@@ -34,7 +34,7 @@ const SOCIAL = [
   { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/majorsdsamc/", color: "hover:text-[#1877F2]" },
   { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/majorsdsinghpg/", color: "hover:text-[#E4405F]" },
   { icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@majorsdsinghp.g.ayurvedicm4085", color: "hover:text-[#CD201F]" },
-  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/918189098662", color: "hover:text-[#25D366]" },
+  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/917300864280", color: "hover:text-[#25D366]" },
 ];
 
 export default function Contact() {
