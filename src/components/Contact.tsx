@@ -69,7 +69,8 @@ export default function Contact() {
             className="lg:col-span-2"
           >
             <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
-              Whether exploring prospective admissions, standard enrollment verification, or institutional visits, our specialized desks are at your disposal.
+              Visit our Ayurvedic medical college on Bewar Road, Fatehgarh-Farrukhabad for BAMS
+              admission guidance, PG Ayurveda counselling, campus visits, and document support.
             </p>
           </motion.div>
         </div>

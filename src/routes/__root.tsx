@@ -14,8 +14,26 @@ const SITE_URL = "https://majorsdspgamc.com";
 const SITE_NAME = "Major S.D. Singh PG Ayurvedic Medical College | Top BAMS College in UP";
 const DEFAULT_TITLE = "Major S.D. Singh PG Ayurvedic Medical College | Top BAMS College in UP";
 const DEFAULT_DESCRIPTION =
-  "Apply for BAMS and PG Ayurveda programs at Major S.D. Singh P.G. Ayurvedic Medical College & Hospital. NCISM approved college with strong clinical exposure and experienced faculty.";
+  "Apply for BAMS admission in UP and MS Ayurveda programs at Major S.D. Singh PG Ayurvedic Medical College, an NCISM approved Ayurvedic college in Farrukhabad.";
 const OG_IMAGE = `${SITE_URL}/thumnail.webp`;
+const KEYWORDS = [
+  "BAMS admission UP",
+  "BAMS college in Farrukhabad",
+  "Ayurvedic medical college UP",
+  "MS Prasuti Tantra admission UP",
+  "MS Shalya Tantra college UP",
+  "BAMS college in Uttar Pradesh NCISM approved",
+  "Major SD Singh Ayurvedic Medical College",
+  "BAMS college Farrukhabad",
+  "Ayurvedic college Fatehgarh",
+  "best BAMS college in Central UP",
+  "AYUSH college near Kanpur",
+  "BAMS college near Lucknow UP",
+  "Ayurvedic medical college Bewar Road",
+  "BAMS NEET admission UP",
+  "AIAPGET MS admission UP",
+  "NCISM approved PG Ayurvedic college UP",
+].join(", ");
 
 function NotFoundComponent() {
   return (
@@ -82,11 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: DEFAULT_TITLE },
       { name: "description", content: DEFAULT_DESCRIPTION },
       { name: "author", content: "Major S.D. Singh P.G. Ayurvedic Medical College Team" },
-      {
-        name: "keywords",
-        content:
-          "BAMS admission, Ayurveda college admission, MSDSPG college, Major SD Singh PG Ayurvedic Medical College, NCISM approved BAMS, Ayurveda PG courses",
-      },
+      { name: "keywords", content: KEYWORDS },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "googlebot", content: "index, follow, max-image-preview:large" },
       { property: "og:site_name", content: SITE_NAME },
@@ -167,11 +181,45 @@ function RootShell({ children }: { children: React.ReactNode }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "CollegeOrUniversity",
-              name: SITE_NAME,
+              name: "Major S.D. Singh PG Ayurvedic Medical College & Hospital",
+              alternateName: [
+                "Major SD Singh Ayurvedic Medical College",
+                "MSDSPG Ayurvedic Medical College",
+              ],
               url: SITE_URL,
               logo: `${SITE_URL}/logo.webp`,
               image: OG_IMAGE,
               sameAs: [SITE_URL],
+              description: DEFAULT_DESCRIPTION,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Bewar Road, Fatehgarh",
+                addressLocality: "Farrukhabad",
+                addressRegion: "Uttar Pradesh",
+                postalCode: "209601",
+                addressCountry: "IN",
+              },
+              areaServed: ["Farrukhabad", "Fatehgarh", "Central UP", "Kanpur", "Lucknow"],
+              hasCourse: [
+                {
+                  "@type": "Course",
+                  name: "Bachelor of Ayurvedic Medicine and Surgery (BAMS)",
+                  description:
+                    "BAMS 5.5 years course in UP with NEET-based admission, clinical training, and compulsory internship.",
+                },
+                {
+                  "@type": "Course",
+                  name: "MS Prasuti Tantra Avum Stri Roga",
+                  description:
+                    "Postgraduate Ayurveda course in Prasuti Tantra and Stri Roga for Ayurvedic obstetrics and gynecology.",
+                },
+                {
+                  "@type": "Course",
+                  name: "MS Shalya Tantra",
+                  description:
+                    "Postgraduate Ayurvedic surgery course with Sushruta curriculum exposure and Ksharasutra therapy training.",
+                },
+              ],
             }),
           }}
         />

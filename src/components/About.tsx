@@ -145,14 +145,14 @@ export default function About() {
 
           <p className="text-charcoal/70 text-sm sm:text-base leading-relaxed mb-4">
             Major SD Singh PG Ayurvedic Medical College & Hospital is a premier institution
-            dedicated to the timeless science of Ayurveda. Affiliated with the state university and
-            approved by NCISM, we have nurtured thousands of physicians and surgeons over four
-            decades.
+            dedicated to the timeless science of Ayurveda in Farrukhabad, Uttar Pradesh. Located on
+            Bewar Road near Fatehgarh, the NCISM approved campus serves students searching for a
+            BAMS college in Central UP with an attached teaching hospital and residential facilities.
           </p>
           <p className="text-charcoal/70 text-sm sm:text-base leading-relaxed mb-8">
-            Our mission is to seamlessly blend the wisdom of classical Ayurvedic Samhitas with the
-            rigor of modern medical sciences — producing healers who are rooted in tradition and
-            ready for the future.
+            Our mission is to blend the wisdom of classical Ayurvedic Samhitas with the rigor of
+            modern medical sciences across BAMS, MS Prasuti Tantra Avum Stri Roga, and MS Shalya
+            Tantra, producing healers who are rooted in tradition and ready for the future.
           </p>
 
           {/* Feature points */}

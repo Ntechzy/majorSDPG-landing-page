@@ -43,8 +43,8 @@ export default function Courses() {
           </h2>
           <div className="h-px w-24 bg-gold mx-auto my-6" />
           <p className="max-w-2xl mx-auto text-cream/70">
-            From foundational BAMS to advanced surgical specializations — chart your career in
-            India's ancient healing science.
+            From BAMS NEET admission in UP to AIAPGET-based MS Prasuti Tantra and MS Shalya
+            Tantra, chart your career in India's ancient healing science.
           </p>
         </motion.div>
 
