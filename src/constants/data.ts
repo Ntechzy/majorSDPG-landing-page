@@ -30,7 +30,7 @@ export const STATS = [
 
 export const ABOUT_STATS = [
   { value: 20, suffix: "+", label: "Years Established" },
-  { value: 200, suffix: "+", label: "Beds Hospital" },
+  { value: 300, suffix: "+", label: "Beds Hospital" },
   { value: 50, suffix: "+", label: "Expert Faculty" },
   { value: 5000, suffix: "+", label: "Graduates" },
 ];
@@ -43,7 +43,7 @@ export const COURSES = [
     title: "Bachelor of Ayurvedic Medicine & Surgery (BAMS)",
     duration: "5½ Years (including 1-year internship)",
     description:
-      "The flagship undergraduate program providing comprehensive training in classical Ayurvedic texts, modern anatomy, physiology, pharmacology, and clinical practice. Graduates are eligible to practice as licensed Ayurvedic physicians.",
+      "The flagship BAMS 5.5 years course in UP, providing NEET-based admission pathways, classical Ayurvedic texts, modern anatomy, physiology, pharmacology, and clinical practice. Graduates complete internship training and are eligible to practice as licensed Ayurvedic physicians.",
     highlights: [
       "Ayurvedic Samhitas & Philosophy",
       "Dravyaguna (Ayurvedic Pharmacology)",
@@ -62,7 +62,7 @@ export const COURSES = [
     title: "Prasuti Tantra Avum Stri Rog (MS)",
     duration: "3 Years",
     description:
-      "Advanced postgraduate specialization in Ayurvedic gynecology and obstetrics. Master ancient Stri Rog protocols alongside modern clinical gynecology for holistic women's healthcare.",
+      "Advanced MS Prasuti Tantra and Stri Roga specialization in Ayurvedic gynecology and obstetrics for AIAPGET-qualified BAMS graduates. Master ancient Stri Rog protocols alongside modern clinical gynecology for holistic women's healthcare.",
     highlights: [
       "Garbhini Paricharya & Prasava",
       "Yoni Vyapad Chikitsa",
@@ -81,7 +81,7 @@ export const COURSES = [
     title: "Shalya Tantra (MS)",
     duration: "3 Years",
     description:
-      "Postgraduate specialization in Ayurvedic surgery — one of the world's oldest surgical traditions. Master Sushruta's surgical techniques alongside contemporary operative procedures.",
+      "MS Shalya Tantra postgraduate Ayurvedic surgery training in Uttar Pradesh, covering Sushruta's surgical curriculum, Ksharasutra therapy, and contemporary operative procedures.",
     highlights: [
       "Sushruta Samhita & Yantra-Shastra",
       "Ksharasutra therapy (Ayurvedic para-surgical)",
@@ -99,7 +99,7 @@ export const FACILITIES = [
   {
     icon: FaHospital,
     title: "Teaching Hospital",
-    desc: "200+ bed hospital with OPD, IPD, OT, and specialty clinics for hands-on clinical exposure from day one.",
+    desc: "300+ bed hospital with OPD, IPD, OT, and specialty clinics for hands-on clinical exposure from day one.",
     image: "/facilities/teaching.webp",
     tag: "Clinical",
   },
@@ -215,7 +215,15 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "What is the eligibility for BAMS admission?",
-    a: "10+2 with Physics, Chemistry, Biology; minimum 50% marks; NEET-UG qualified.",
+    a: "For BAMS admission in UP, students need 10+2 with Physics, Chemistry, Biology, minimum required marks as per rules, and NEET-UG qualification.",
+  },
+  {
+    q: "Where is Major SD Singh PG Ayurvedic Medical College located?",
+    a: "The Ayurvedic medical college is located on Bewar Road, Fatehgarh-Farrukhabad, Uttar Pradesh 209601, serving students from Central UP, Kanpur, Lucknow, and nearby districts.",
+  },
+  {
+    q: "Which PG Ayurveda courses are available?",
+    a: "The college offers MS Prasuti Tantra Avum Stri Roga and MS Shalya Tantra for eligible BAMS graduates through the applicable AIAPGET admission process.",
   },
   {
     q: "Is NEET required for MS (PG) admissions?",
@@ -223,7 +231,7 @@ export const FAQS = [
   },
   {
     q: "Is the college NCISM approved?",
-    a: "Yes, the college is fully approved by NCISM (Central Council of Indian Medicine) and affiliated with the state university.",
+    a: "Yes, the college is NCISM approved and affiliated with the state university for BAMS and PG Ayurveda programs.",
   },
   {
     q: "Are hostel facilities available?",

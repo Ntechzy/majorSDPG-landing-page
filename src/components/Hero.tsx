@@ -102,9 +102,9 @@ export default function Hero() {
               variants={item}
               className="mb-8 max-w-xl text-sm leading-relaxed text-gray-300 sm:text-base opacity-90"
             >
-              Join Major SD Singh PG Ayurvedic Medical College & Hospital for a focused B.A.M.S.
-              journey built on strong classroom learning, extensive hospital exposure, and a
-              disciplined approach to professional practice.
+              Join Major SD Singh PG Ayurvedic Medical College & Hospital in Farrukhabad, Uttar
+              Pradesh for BAMS NEET admission, MS Prasuti Tantra, and MS Shalya Tantra programs
+              built on strong classroom learning, hospital exposure, and disciplined practice.
             </motion.p>
 
             {/* Core Action CTAs styled like screenshot anchors */}
@@ -141,8 +141,8 @@ export default function Hero() {
             >
               {[
                 { icon: "🏛️", label: "Est. 1965" },
-                { icon: "🎓", label: "CCIM Approved" },
-                { icon: "🏥", label: "300-Bed Hospital" },
+                { icon: "🎓", label: "NCISM Approved" },
+                { icon: "🏥", label: "150-Bed Hospital" },
               ].map((stat) => (
                 <div key={stat.label} className="flex items-center gap-2">
                   <span className="text-xl filter drop-shadow">{stat.icon}</span>
