@@ -161,52 +161,55 @@ export default function AllBlogs() {
   const showClearFilters = Boolean(searchQuery) || selectedTag !== null;
 
   return (
-    <main className="min-h-screen bg-charcoal-deep text-white">
+    <main className="min-h-screen bg-cream text-charcoal">
       <Navbar />
 
       <section className="relative overflow-hidden px-4 pt-32 pb-20 sm:px-6 md:px-12 md:pt-40 lg:pt-48 lg:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(242,149,43,0.12),transparent_35%),radial-gradient(circle_at_15%_30%,rgba(255,255,255,0.05),transparent_28%)]" />
-        <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute inset-0 opacity-[0.45] [background-image:linear-gradient(rgba(242,149,43,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(242,149,43,0.08)_1px,transparent_1px)] [background-size:34px_34px]" />
+        <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-gold/30 to-transparent" />
 
         <div className="relative mx-auto max-w-7xl">
-          <div className="mx-auto mb-20 max-w-5xl rounded-[32px] border border-gold/15 bg-white/[0.04] px-6 py-10 text-center shadow-[0_30px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:px-8 md:px-12 md:py-14">
+          <div className="mx-auto mb-16 max-w-5xl text-center md:mb-20">
             <div className="mx-auto max-w-3xl space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="grad-bg mx-auto h-px w-10" />
-                <span className="text-xs font-bold uppercase tracking-[0.4em] text-[#adb5bd]">
-                  Insights Library
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-px w-12 bg-sky" />
+                <span className="text-xs font-black uppercase text-sky">
+                  Campus News & Insights
                 </span>
-                <div className="grad-bg mx-auto h-px w-10" />
+                <div className="h-px w-12 bg-sky" />
               </div>
-              <h1 className="text-5xl font-light leading-none tracking-tighter md:text-7xl">
-                All <span className="grad-text font-serif italic">Blogs</span>
+              <h1 className="text-4xl font-bold leading-tight text-charcoal md:text-6xl lg:text-7xl">
+                College Blogs and <span className="text-gold-dark">Ayurvedic Updates</span>
               </h1>
-              <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-[#adb5bd]">
+              <p className="mx-auto max-w-3xl text-base leading-relaxed text-charcoal/55 md:text-lg">
                 Explore institutional updates, Ayurvedic education insights, student life, and
                 editorial stories from Major S.D. Singh PG Ayurvedic Medical College.
               </p>
-              <div className="flex flex-col items-center gap-6 pt-4">
-                <div className="text-center">
-                <p className="text-4xl font-thin text-white">{totalPosts}</p>
-                <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#adb5bd]">
-                  Published Articles
-                </p>
+              <div className="flex items-center justify-center gap-4 pt-2 text-gold">
+                <span className="h-px w-16 bg-gold/35" />
+                <span className="h-2 w-2 rounded-full bg-gold" />
+                <span className="h-px w-16 bg-gold/35" />
               </div>
+              <div className="flex flex-col items-center gap-5 pt-4 sm:flex-row sm:justify-center">
+                <div className="text-center">
+                  <p className="text-4xl font-black text-charcoal">{totalPosts}</p>
+                  <p className="text-[10px] font-black uppercase text-charcoal/45">
+                    Published Articles
+                  </p>
+                </div>
 
-              <Link
-                to="/"
-                className="grad-bg inline-flex rounded-full p-px"
-              >
-                <span className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-xs font-bold uppercase tracking-widest text-[#adb5bd] transition-colors hover:text-white">
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-black uppercase text-charcoal-deep shadow-md transition-colors hover:bg-gold-dark hover:text-white"
+                >
                   <ArrowLeft size={14} />
                   Back to Home
-                </span>
-              </Link>
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto mb-12 max-w-6xl rounded-[28px] border border-gold/10 bg-black/30 p-5 backdrop-blur-sm md:p-6">
+          <div className="mx-auto mb-12 max-w-6xl rounded-2xl border border-gold/15 bg-white p-5 shadow-[0_16px_42px_rgba(13,13,26,0.06)] md:p-6">
             <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
               <BlogSearch value={searchQuery} onChange={handleSearchChange} />
 
@@ -214,7 +217,7 @@ export default function AllBlogs() {
                 <button
                   type="button"
                   onClick={handleClearFilters}
-                  className="w-fit text-xs uppercase tracking-widest text-[#adb5bd] underline transition-colors hover:text-white"
+                  className="w-fit text-xs font-black uppercase text-gold-dark underline transition-colors hover:text-charcoal"
                 >
                   Clear filters
                 </button>
@@ -232,14 +235,14 @@ export default function AllBlogs() {
           {isLoading ? (
             <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
               {Array.from({ length: 9 }, (_, index) => (
-                <div key={index} className="h-[450px] animate-pulse rounded-xl bg-zinc-900" />
+                <div key={index} className="h-[430px] animate-pulse rounded-2xl bg-gold/10" />
               ))}
             </div>
           ) : null}
 
           {status === "failed" ? (
             <div className="mx-auto max-w-3xl py-20 text-center">
-              <p className="text-[#adb5bd]">{error || "Failed to load articles"}</p>
+              <p className="font-semibold text-charcoal/65">{error || "Failed to load articles"}</p>
               <button
                 type="button"
                 onClick={() =>
@@ -252,24 +255,22 @@ export default function AllBlogs() {
                     })
                   )
                 }
-                className="grad-bg mt-6 rounded-full p-px"
+                className="mt-6 rounded-full bg-gold px-5 py-2 text-xs font-black uppercase text-charcoal-deep transition-colors hover:bg-gold-dark hover:text-white"
               >
-                <span className="inline-flex rounded-full bg-black px-5 py-2 text-xs font-bold uppercase tracking-widest text-white">
-                  Retry
-                </span>
+                Retry
               </button>
             </div>
           ) : null}
 
           {status === "succeeded" && posts.length === 0 ? (
             <div className="mx-auto max-w-3xl py-20 text-center">
-              <p className="text-xl text-white">No articles found</p>
-              <p className="mt-2 text-[#adb5bd]">Try a different search or tag</p>
+              <p className="text-xl font-black text-charcoal">No articles found</p>
+              <p className="mt-2 text-charcoal/55">Try a different search or tag</p>
               {showClearFilters ? (
                 <button
                   type="button"
                   onClick={handleClearFilters}
-                  className="mt-5 text-xs uppercase tracking-widest text-[#adb5bd] underline transition-colors hover:text-white"
+                  className="mt-5 text-xs font-black uppercase text-gold-dark underline transition-colors hover:text-charcoal"
                 >
                   Clear filters
                 </button>
@@ -296,8 +297,8 @@ export default function AllBlogs() {
           ) : null}
 
           <div className="mt-24 text-center">
-            <div className="mx-auto mb-6 h-px w-24 bg-[#adb5bd]/20" />
-            <p className="text-[10px] uppercase tracking-[0.5em] text-[#adb5bd]">
+            <div className="mx-auto mb-6 h-px w-24 bg-gold/25" />
+            <p className="text-[10px] font-black uppercase text-charcoal/40">
               End of Archive
             </p>
           </div>

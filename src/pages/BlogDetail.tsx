@@ -49,21 +49,21 @@ export default function BlogDetail() {
 
   if (status === "loading" || (status === "idle" && !post)) {
     return (
-      <main className="min-h-screen bg-charcoal-deep text-white">
+      <main className="min-h-screen bg-cream text-charcoal">
         <Navbar />
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="h-px w-full bg-linear-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-6xl px-6 pt-32 pb-12 md:px-12 md:pt-40 lg:pt-48">
-          <div className="h-[60vh] min-h-[400px] animate-pulse rounded-[28px] bg-zinc-900" />
+          <div className="h-[60vh] min-h-[400px] animate-pulse rounded-2xl bg-gold/10" />
           <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_320px]">
             <div className="space-y-4">
               {Array.from({ length: 9 }, (_, index) => (
-                <div key={index} className="h-4 animate-pulse rounded bg-zinc-900" />
+                <div key={index} className="h-4 animate-pulse rounded bg-gold/10" />
               ))}
             </div>
             <div className="space-y-4">
-              <div className="h-24 animate-pulse rounded-2xl bg-zinc-900" />
-              <div className="h-24 animate-pulse rounded-2xl bg-zinc-900" />
-              <div className="h-36 animate-pulse rounded-2xl bg-zinc-900" />
+              <div className="h-24 animate-pulse rounded-2xl bg-gold/10" />
+              <div className="h-24 animate-pulse rounded-2xl bg-gold/10" />
+              <div className="h-36 animate-pulse rounded-2xl bg-gold/10" />
             </div>
           </div>
         </div>
@@ -74,16 +74,14 @@ export default function BlogDetail() {
 
   if (status === "failed" || !post) {
     return (
-      <main className="min-h-screen bg-charcoal-deep text-white">
+      <main className="min-h-screen bg-cream text-charcoal">
         <Navbar />
         <div className="flex min-h-[70vh] flex-col items-center justify-center px-6 pt-32 pb-12 text-center md:pt-40 lg:pt-48">
-          <p className="text-3xl font-light tracking-tight">Article not found</p>
-          <p className="mt-3 text-[#adb5bd]">{error || "This article is no longer available."}</p>
-          <Link to="/blogs" className="grad-bg mt-8 rounded-full p-px">
-            <span className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-3 text-xs font-bold uppercase tracking-widest text-white">
+          <p className="text-3xl font-black">Article not found</p>
+          <p className="mt-3 text-charcoal/60">{error || "This article is no longer available."}</p>
+          <Link to="/blogs" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs font-black uppercase text-charcoal-deep transition-colors hover:bg-gold-dark hover:text-white">
               <ArrowLeft size={14} />
               Back to Blogs
-            </span>
           </Link>
         </div>
         <Footer />
@@ -96,48 +94,46 @@ export default function BlogDetail() {
   const heroImage = getFeaturedImage(post);
 
   return (
-    <main className="min-h-screen bg-charcoal-deep font-sans text-white">
+    <main className="min-h-screen bg-cream font-sans text-charcoal">
       <Navbar />
       <section className="relative overflow-hidden px-4 pt-32 pb-20 sm:px-6 md:px-12 md:pt-40 lg:pt-48">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(242,149,43,0.12),transparent_35%),radial-gradient(circle_at_85%_10%,rgba(255,255,255,0.05),transparent_24%)]" />
-        <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute inset-0 opacity-[0.45] [background-image:linear-gradient(rgba(242,149,43,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(242,149,43,0.08)_1px,transparent_1px)] [background-size:34px_34px]" />
+        <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-gold/30 to-transparent" />
 
         <div className="relative mx-auto max-w-6xl">
-          <div className="mx-auto mb-8 max-w-5xl rounded-[24px] border border-gold/10 bg-white/[0.04] px-5 py-4 backdrop-blur-sm md:px-6">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-center text-[10px] uppercase tracking-widest text-[#adb5bd]">
-              <Link to="/" className="transition-colors hover:text-white">
+          <div className="mx-auto mb-8 max-w-5xl px-5 py-4 md:px-6">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-center text-[10px] font-black uppercase text-charcoal/45">
+              <Link to="/" className="transition-colors hover:text-gold-dark">
                 Home
               </Link>
               <span>/</span>
-              <Link to="/blogs" className="transition-colors hover:text-white">
+              <Link to="/blogs" className="transition-colors hover:text-gold-dark">
                 Blog
               </Link>
               <span>/</span>
-              <span className="text-white/80">{decodedTitle}</span>
+              <span className="text-charcoal/75">{decodedTitle}</span>
             </div>
           </div>
 
           <div className="mx-auto max-w-5xl">
-            <div className="relative min-h-[400px] overflow-hidden rounded-[28px] border border-gold/10 shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+            <div className="relative min-h-[430px] overflow-hidden rounded-2xl border border-gold/15 bg-charcoal-deep shadow-[0_24px_60px_rgba(13,13,26,0.16)]">
               <img
                 src={heroImage}
                 alt={decodedTitle}
-                className="absolute inset-0 h-full w-full object-cover opacity-60"
+                className="absolute inset-0 h-full w-full object-cover opacity-75"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-charcoal-deep via-charcoal-deep/35 to-transparent" />
 
               <div className="absolute right-0 bottom-0 left-0 mx-auto max-w-5xl px-6 pb-12 md:px-12">
-                <div className="grad-bg inline-flex rounded-full p-px">
-                  <span className="rounded-full bg-black px-4 py-2 text-[9px] font-black uppercase tracking-[0.2em] text-[#adb5bd]">
+                <div className="inline-flex rounded-full bg-gold px-4 py-2 text-[10px] font-black uppercase text-charcoal-deep">
                     {categoryName}
-                  </span>
                 </div>
 
-                <h1 className="mt-4 text-4xl font-light leading-tight tracking-tighter text-white md:text-6xl">
+                <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
                   {decodedTitle}
                 </h1>
 
-                <div className="mt-4 flex flex-wrap gap-6 text-xs uppercase tracking-widest text-[#adb5bd]">
+                <div className="mt-5 flex flex-wrap gap-5 text-xs font-bold uppercase text-cream/80">
                   <div className="flex items-center gap-2">
                     <UserRound size={14} />
                     <span>{getAuthorName(post)}</span>
@@ -155,7 +151,7 @@ export default function BlogDetail() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-6xl rounded-[32px] border border-gold/10 bg-black/25 backdrop-blur-sm">
+          <div className="mx-auto mt-10 max-w-6xl rounded-2xl border border-gold/15 bg-white shadow-[0_18px_45px_rgba(13,13,26,0.08)]">
             <BlogDetailContent post={post} />
           </div>
 

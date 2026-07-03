@@ -25,14 +25,14 @@ export default function BlogSearch({ value, onChange }: BlogSearchProps) {
     <label className="relative block w-full max-w-md">
       <Search
         size={16}
-        className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-[#adb5bd]"
+        className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-gold-dark"
       />
       <input
         type="search"
         value={localValue}
         onChange={(event) => setLocalValue(event.target.value)}
         placeholder="Search articles, topics, and updates"
-        className="w-full rounded-xl border border-[#adb5bd]/20 bg-black px-4 py-3 pl-11 text-sm font-light text-white outline-none transition-colors placeholder:text-[#adb5bd] focus:border-[#adb5bd]/40"
+        className="w-full rounded-xl border border-gold/20 bg-white px-4 py-3 pl-11 text-sm font-medium text-charcoal outline-none transition-colors placeholder:text-charcoal/45 focus:border-gold/60 focus:ring-4 focus:ring-gold/10"
       />
     </label>
   );

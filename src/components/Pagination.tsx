@@ -37,16 +37,14 @@ function PageButton({
 }) {
   if (active) {
     return (
-      <div className="grad-bg rounded-full p-px">
-        <button
-          type="button"
-          onClick={onClick}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#050505] text-sm font-semibold text-white"
-          aria-current="page"
-        >
-          {label}
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={onClick}
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-sm font-black text-charcoal-deep shadow-sm"
+        aria-current="page"
+      >
+        {label}
+      </button>
     );
   }
 
@@ -54,7 +52,7 @@ function PageButton({
     <button
       type="button"
       onClick={onClick}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#adb5bd]/20 text-sm font-semibold text-[#adb5bd] transition-colors hover:border-[#adb5bd]/40 hover:text-white"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-white text-sm font-bold text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark"
     >
       {label}
     </button>
@@ -70,7 +68,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center gap-2 rounded-full border border-[#adb5bd]/20 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#adb5bd] transition-colors hover:border-[#adb5bd]/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-black uppercase text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark disabled:cursor-not-allowed disabled:opacity-40"
       >
         <ChevronLeft size={14} />
         Prev
@@ -85,7 +83,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
             onClick={() => onPageChange(page)}
           />
         ) : (
-          <span key={`${page}-${index}`} className="px-2 text-sm text-[#adb5bd]">
+          <span key={`${page}-${index}`} className="px-2 text-sm text-charcoal/45">
             {page}
           </span>
         )
@@ -95,7 +93,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center gap-2 rounded-full border border-[#adb5bd]/20 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#adb5bd] transition-colors hover:border-[#adb5bd]/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-black uppercase text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark disabled:cursor-not-allowed disabled:opacity-40"
       >
         Next
         <ChevronRight size={14} />

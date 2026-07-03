@@ -18,15 +18,13 @@ function TagChip({
 }) {
   if (active) {
     return (
-      <div className="grad-bg rounded-full p-px">
-        <button
-          type="button"
-          onClick={onClick}
-          className="rounded-full bg-[#050505] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white"
-        >
-          {label}
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={onClick}
+        className="rounded-full bg-gold px-4 py-2 text-xs font-black uppercase text-charcoal-deep shadow-sm"
+      >
+        {label}
+      </button>
     );
   }
 
@@ -34,7 +32,7 @@ function TagChip({
     <button
       type="button"
       onClick={onClick}
-      className="rounded-full border border-[#adb5bd]/20 bg-transparent px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#adb5bd] transition-colors hover:border-[#adb5bd]/40 hover:text-white"
+      className="rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-black uppercase text-charcoal/65 transition-colors hover:border-gold/50 hover:text-gold-dark"
     >
       {label}
     </button>
@@ -52,7 +50,7 @@ export default function TagFilter({
       <TagChip active={selectedTagId === null} label="All" onClick={() => onChange(null)} />
 
       {isLoading && tags.length === 0 ? (
-        <span className="text-xs uppercase tracking-widest text-[#adb5bd]">Loading tags...</span>
+        <span className="text-xs font-bold uppercase text-charcoal/50">Loading tags...</span>
       ) : (
         tags.map((tag) => (
           <TagChip

@@ -58,17 +58,18 @@ export default function RelatedPosts({ post }: RelatedPostsProps) {
   }
 
   return (
-    <section className="mx-auto mt-24 max-w-6xl border-t border-[#adb5bd]/10 px-6 pt-16 md:px-12">
-      <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+    <section className="mx-auto mt-20 max-w-6xl border-t border-gold/15 px-0 pt-14">
+      <div className="mb-10 text-center">
         <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="grad-bg h-px w-8" />
-            <span className="text-xs font-bold uppercase tracking-[0.4em] text-[#adb5bd]">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px w-10 bg-sky" />
+            <span className="text-xs font-black uppercase text-sky">
               Continue Reading
             </span>
+            <div className="h-px w-10 bg-sky" />
           </div>
-          <h2 className="text-4xl font-light tracking-tighter text-white md:text-5xl">
-            Related <span className="grad-text font-serif italic">Articles</span>
+          <h2 className="text-4xl font-black text-charcoal md:text-5xl">
+            Related <span className="text-gold-dark">Articles</span>
           </h2>
         </div>
       </div>
@@ -76,7 +77,7 @@ export default function RelatedPosts({ post }: RelatedPostsProps) {
       {status === "loading" ? (
         <div className="grid gap-6 md:grid-cols-3">
           {Array.from({ length: 3 }, (_, index) => (
-            <div key={index} className="h-[450px] animate-pulse rounded-xl bg-zinc-900" />
+            <div key={index} className="h-[420px] animate-pulse rounded-2xl bg-gold/10" />
           ))}
         </div>
       ) : null}
