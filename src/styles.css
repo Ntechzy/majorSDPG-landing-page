@@ -97,3 +97,105 @@ body {
 .hero-professional-font h2 {
   font-family: "Roboto", serif;
 }
+
+.grad-bg {
+  background: linear-gradient(to right, #6abdb1, #f2d448, #ff9900);
+}
+
+.grad-text {
+  background: linear-gradient(to right, #6abdb1, #f2d448, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog-prose {
+  color: rgba(26, 26, 46, 0.72);
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+.blog-prose > * + * {
+  margin-top: 1.4rem;
+}
+
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  color: #1a1a2e;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.18;
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.blog-prose h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+
+.blog-prose h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.blog-prose p,
+.blog-prose li,
+.blog-prose blockquote {
+  color: rgba(26, 26, 46, 0.72);
+}
+
+.blog-prose a {
+  color: #c97212;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.blog-prose strong {
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  padding-left: 1.3rem;
+}
+
+.blog-prose li + li {
+  margin-top: 0.55rem;
+}
+
+.blog-prose blockquote {
+  border-left: 3px solid rgba(242, 149, 43, 0.45);
+  background: rgba(242, 149, 43, 0.06);
+  border-radius: 0 14px 14px 0;
+  padding-left: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.blog-prose img {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(242, 149, 43, 0.18);
+}
+
+.blog-prose th,
+.blog-prose td {
+  border: 1px solid rgba(242, 149, 43, 0.16);
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+.blog-prose th {
+  color: #1a1a2e;
+  background: rgba(242, 149, 43, 0.08);
+}

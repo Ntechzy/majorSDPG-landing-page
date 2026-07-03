@@ -34,18 +34,18 @@ const COLUMNS = [
   {
     heading: "Programs",
     links: [
-      { label: "BAMS", href: "#" },
-      { label: "MS Prasuti Tantra", href: "#" },
-      { label: "MS Shalya Tantra", href: "#" },
+      { label: "BAMS", href: "/#courses" },
+      { label: "MS Prasuti Tantra", href: "/#courses" },
+      { label: "MS Shalya Tantra", href: "/#courses" },
     ],
   },
   {
     heading: "Quick Links",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Facilities", href: "#facilities" },
-      { label: "Admissions", href: "#admissions" },
-      { label: "Contact", href: "#lead" },
+      { label: "About", href: "/#about" },
+      { label: "Facilities", href: "/#facilities" },
+      { label: "Admissions", href: "/#admissions" },
+      { label: "Contact", href: "/#lead" },
     ],
   },
   {
