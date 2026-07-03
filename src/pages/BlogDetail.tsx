@@ -77,9 +77,9 @@ export default function BlogDetail() {
       <main className="min-h-screen bg-cream text-charcoal">
         <Navbar />
         <div className="flex min-h-[70vh] flex-col items-center justify-center px-6 pt-32 pb-12 text-center md:pt-40 lg:pt-48">
-          <p className="text-3xl font-black">Article not found</p>
+          <p className="text-3xl font-semibold">Article not found</p>
           <p className="mt-3 text-charcoal/60">{error || "This article is no longer available."}</p>
-          <Link to="/blogs" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs font-black uppercase text-charcoal-deep transition-colors hover:bg-gold-dark hover:text-white">
+          <Link to="/blogs" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs font-semibold uppercase text-charcoal-deep transition-colors hover:bg-gold-dark hover:text-white">
               <ArrowLeft size={14} />
               Back to Blogs
           </Link>
@@ -102,7 +102,7 @@ export default function BlogDetail() {
 
         <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto mb-8 max-w-5xl px-5 py-4 md:px-6">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-center text-[10px] font-black uppercase text-charcoal/45">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase text-charcoal/45">
               <Link to="/" className="transition-colors hover:text-gold-dark">
                 Home
               </Link>
@@ -125,15 +125,15 @@ export default function BlogDetail() {
               <div className="absolute inset-0 bg-linear-to-t from-charcoal-deep via-charcoal-deep/35 to-transparent" />
 
               <div className="absolute right-0 bottom-0 left-0 mx-auto max-w-5xl px-6 pb-12 md:px-12">
-                <div className="inline-flex rounded-full bg-gold px-4 py-2 text-[10px] font-black uppercase text-charcoal-deep">
+                <div className="inline-flex rounded-full bg-gold px-4 py-2 text-[10px] font-semibold uppercase text-charcoal-deep">
                     {categoryName}
                 </div>
 
-                <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
+                <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
                   {decodedTitle}
                 </h1>
 
-                <div className="mt-5 flex flex-wrap gap-5 text-xs font-bold uppercase text-cream/80">
+                <div className="mt-5 flex flex-wrap gap-5 text-xs font-medium uppercase text-cream/80">
                   <div className="flex items-center gap-2">
                     <UserRound size={14} />
                     <span>{getAuthorName(post)}</span>

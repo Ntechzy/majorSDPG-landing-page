@@ -40,7 +40,7 @@ function PageButton({
       <button
         type="button"
         onClick={onClick}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-sm font-black text-charcoal-deep shadow-sm"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-sm font-semibold text-charcoal-deep shadow-sm"
         aria-current="page"
       >
         {label}
@@ -52,7 +52,7 @@ function PageButton({
     <button
       type="button"
       onClick={onClick}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-white text-sm font-bold text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-white text-sm font-medium text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark"
     >
       {label}
     </button>
@@ -68,7 +68,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-black uppercase text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-semibold uppercase text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark disabled:cursor-not-allowed disabled:opacity-40"
       >
         <ChevronLeft size={14} />
         Prev
@@ -93,7 +93,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-black uppercase text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2 text-xs font-semibold uppercase text-charcoal/60 transition-colors hover:border-gold/50 hover:text-gold-dark disabled:cursor-not-allowed disabled:opacity-40"
       >
         Next
         <ChevronRight size={14} />

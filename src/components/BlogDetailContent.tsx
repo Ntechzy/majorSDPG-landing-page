@@ -154,7 +154,7 @@ export default function BlogDetailContent({ post }: BlogDetailContentProps) {
 
       <aside className="mt-12 space-y-8 lg:mt-0 lg:sticky lg:top-8 lg:self-start">
         <div>
-          <p className="mb-4 text-[10px] font-black uppercase text-charcoal/50">
+          <p className="mb-4 text-[10px] font-semibold uppercase text-charcoal/50">
             Share this article
           </p>
           <div className="flex flex-wrap gap-3">
@@ -192,7 +192,7 @@ export default function BlogDetailContent({ post }: BlogDetailContentProps) {
                 {copied ? <Check size={16} /> : <Copy size={16} />}
               </ShareIconButton>
               {copied ? (
-                <span className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-full border border-gold/20 bg-charcoal px-2 py-1 text-[10px] font-bold uppercase text-white">
+                <span className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-full border border-gold/20 bg-charcoal px-2 py-1 text-[10px] font-medium uppercase text-white">
                   Copied!
                 </span>
               ) : null}
@@ -202,14 +202,14 @@ export default function BlogDetailContent({ post }: BlogDetailContentProps) {
 
         {tags.length > 0 ? (
           <div>
-            <p className="mb-3 text-[10px] font-black uppercase text-charcoal/50">Tags</p>
+            <p className="mb-3 text-[10px] font-semibold uppercase text-charcoal/50">Tags</p>
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Link
                   key={tag.id}
                   to="/blogs"
                   search={{ tag: tag.slug }}
-                  className="rounded-full border border-gold/20 bg-cream px-3 py-1 text-[10px] font-black uppercase text-charcoal/60 transition-all hover:border-gold/60 hover:text-gold-dark"
+                  className="rounded-full border border-gold/20 bg-cream px-3 py-1 text-[10px] font-semibold uppercase text-charcoal/60 transition-all hover:border-gold/60 hover:text-gold-dark"
                 >
                   {tag.name}
                 </Link>
@@ -220,7 +220,7 @@ export default function BlogDetailContent({ post }: BlogDetailContentProps) {
 
         {headings.length > 0 ? (
           <div>
-            <p className="mb-3 text-[10px] font-black uppercase text-charcoal/50">
+            <p className="mb-3 text-[10px] font-semibold uppercase text-charcoal/50">
               In this article
             </p>
             <div className="space-y-2">

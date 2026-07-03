@@ -173,12 +173,12 @@ export default function AllBlogs() {
             <div className="mx-auto max-w-3xl space-y-6">
               <div className="flex items-center justify-center gap-4">
                 <div className="h-px w-12 bg-sky" />
-                <span className="text-xs font-black uppercase text-sky">
+                <span className="text-xs font-semibold uppercase text-sky">
                   Campus News & Insights
                 </span>
                 <div className="h-px w-12 bg-sky" />
               </div>
-              <h1 className="text-4xl font-bold leading-tight text-charcoal md:text-6xl lg:text-7xl">
+              <h1 className="text-4xl font-semibold leading-tight text-charcoal md:text-6xl lg:text-7xl">
                 College Blogs and <span className="text-gold-dark">Ayurvedic Updates</span>
               </h1>
               <p className="mx-auto max-w-3xl text-base leading-relaxed text-charcoal/55 md:text-lg">
@@ -192,15 +192,15 @@ export default function AllBlogs() {
               </div>
               <div className="flex flex-col items-center gap-5 pt-4 sm:flex-row sm:justify-center">
                 <div className="text-center">
-                  <p className="text-4xl font-black text-charcoal">{totalPosts}</p>
-                  <p className="text-[10px] font-black uppercase text-charcoal/45">
+                  <p className="text-4xl font-semibold text-charcoal">{totalPosts}</p>
+                  <p className="text-[10px] font-semibold uppercase text-charcoal/45">
                     Published Articles
                   </p>
                 </div>
 
                 <Link
                   to="/"
-                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-black uppercase text-charcoal-deep shadow-md transition-colors hover:bg-gold-dark hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase text-charcoal-deep shadow-md transition-colors hover:bg-gold-dark hover:text-white"
                 >
                   <ArrowLeft size={14} />
                   Back to Home
@@ -217,7 +217,7 @@ export default function AllBlogs() {
                 <button
                   type="button"
                   onClick={handleClearFilters}
-                  className="w-fit text-xs font-black uppercase text-gold-dark underline transition-colors hover:text-charcoal"
+                  className="w-fit text-xs font-semibold uppercase text-gold-dark underline transition-colors hover:text-charcoal"
                 >
                   Clear filters
                 </button>
@@ -255,7 +255,7 @@ export default function AllBlogs() {
                     })
                   )
                 }
-                className="mt-6 rounded-full bg-gold px-5 py-2 text-xs font-black uppercase text-charcoal-deep transition-colors hover:bg-gold-dark hover:text-white"
+                className="mt-6 rounded-full bg-gold px-5 py-2 text-xs font-semibold uppercase text-charcoal-deep transition-colors hover:bg-gold-dark hover:text-white"
               >
                 Retry
               </button>
@@ -264,13 +264,13 @@ export default function AllBlogs() {
 
           {status === "succeeded" && posts.length === 0 ? (
             <div className="mx-auto max-w-3xl py-20 text-center">
-              <p className="text-xl font-black text-charcoal">No articles found</p>
+              <p className="text-xl font-semibold text-charcoal">No articles found</p>
               <p className="mt-2 text-charcoal/55">Try a different search or tag</p>
               {showClearFilters ? (
                 <button
                   type="button"
                   onClick={handleClearFilters}
-                  className="mt-5 text-xs font-black uppercase text-gold-dark underline transition-colors hover:text-charcoal"
+                  className="mt-5 text-xs font-semibold uppercase text-gold-dark underline transition-colors hover:text-charcoal"
                 >
                   Clear filters
                 </button>
@@ -298,7 +298,7 @@ export default function AllBlogs() {
 
           <div className="mt-24 text-center">
             <div className="mx-auto mb-6 h-px w-24 bg-gold/25" />
-            <p className="text-[10px] font-black uppercase text-charcoal/40">
+            <p className="text-[10px] font-semibold uppercase text-charcoal/40">
               End of Archive
             </p>
           </div>

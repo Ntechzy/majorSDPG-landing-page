@@ -63,12 +63,12 @@ export default function RelatedPosts({ post }: RelatedPostsProps) {
         <div className="space-y-4">
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-10 bg-sky" />
-            <span className="text-xs font-black uppercase text-sky">
+            <span className="text-xs font-semibold uppercase text-sky">
               Continue Reading
             </span>
             <div className="h-px w-10 bg-sky" />
           </div>
-          <h2 className="text-4xl font-black text-charcoal md:text-5xl">
+          <h2 className="text-4xl font-semibold text-charcoal md:text-5xl">
             Related <span className="text-gold-dark">Articles</span>
           </h2>
         </div>

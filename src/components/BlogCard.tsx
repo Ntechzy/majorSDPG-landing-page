@@ -40,11 +40,11 @@ export default function BlogCard({ post }: BlogCardProps) {
         />
         <div className="absolute inset-0 bg-linear-to-t from-charcoal-deep/45 via-charcoal-deep/10 to-transparent" />
 
-        <div className="absolute top-4 left-4 rounded-full bg-gold px-4 py-2 text-[10px] font-black uppercase text-charcoal-deep shadow-lg">
+        <div className="absolute top-4 left-4 rounded-full bg-gold px-4 py-2 text-[10px] font-semibold uppercase text-charcoal-deep shadow-lg">
             {primaryTag}
         </div>
 
-        <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-3 py-2 text-[10px] font-bold text-charcoal shadow-lg">
+        <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full bg-white/95 px-3 py-2 text-[10px] font-medium text-charcoal shadow-lg">
             <Calendar size={12} />
             <span>{formatDate(post.date)}</span>
         </div>
@@ -55,11 +55,11 @@ export default function BlogCard({ post }: BlogCardProps) {
       </div>
 
       <div className="space-y-4 px-6 pt-10 pb-6">
-        <div className="text-[10px] font-black uppercase text-gold-dark">
+        <div className="text-[10px] font-semibold uppercase text-gold-dark">
           {primaryCategory}
         </div>
 
-        <h3 className="line-clamp-2 text-xl font-black leading-snug text-charcoal transition-colors duration-300 group-hover:text-gold-dark">
+        <h3 className="line-clamp-2 text-xl font-semibold leading-snug text-charcoal transition-colors duration-300 group-hover:text-gold-dark">
           {decodeHTML(post.title.rendered)}
         </h3>
 
@@ -67,7 +67,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           {getExcerpt(post, 130)}
         </p>
 
-        <div className="flex items-center gap-2 pt-1 text-[11px] font-black uppercase text-gold-dark">
+        <div className="flex items-center gap-2 pt-1 text-[11px] font-semibold uppercase text-gold-dark">
           Read Blog <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
         </div>
       </div>
