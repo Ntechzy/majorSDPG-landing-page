@@ -12,13 +12,13 @@ import {
 } from "react-icons/fa6";
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Courses", href: "#courses" },
-  { label: "Facilities", href: "#facilities" },
-  { label: "Admissions", href: "#admissions" },
-  { label: "Blog", href: "https://blogs.majorsdsinghpgamc.in/" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Courses", href: "/#courses" },
+  { label: "Facilities", href: "/#facilities" },
+  { label: "Admissions", href: "/#admissions" },
+  { label: "Blog", href: "/blogs" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const STATS = [

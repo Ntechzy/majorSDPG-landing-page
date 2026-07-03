@@ -7,7 +7,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { Provider } from "react-redux";
 
+import ScrollToTop from "@/components/ScrollToTop";
+import { store } from "@/store";
 import appCss from "../styles.css?url";
 
 const SITE_URL = "https://majorsdspgamc.com";
@@ -265,7 +268,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <Provider store={store}>
+        <ScrollToTop />
+        <Outlet />
+      </Provider>
     </QueryClientProvider>
   );
 }

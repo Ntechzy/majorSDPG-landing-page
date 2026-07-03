@@ -59,7 +59,7 @@ export default function Navbar() {
             Register Now for Joint Campus Placement Programme
           </span>
           <a
-            href="#lead"
+            href="/#lead"
             className="bg-gold hover:bg-gold-dark text-charcoal-deep font-bold px-3 py-1 rounded text-[10px] uppercase tracking-wider transition-colors"
           >
             Register Now
@@ -92,7 +92,7 @@ export default function Navbar() {
           }`}
       >
         {/* Logo Branding */}
-        <a href="#home" className="flex items-center max-w-50 sm:max-w-70 lg:max-w-[320px] shrink-0">
+        <a href="/#home" className="flex items-center max-w-50 sm:max-w-70 lg:max-w-[320px] shrink-0">
           <img
             src="/MAJOR-SD-SINGH-AYURVEDIC-MEDICAL-COLLEGE.png"
             alt="Institution Logo"
@@ -287,7 +287,7 @@ export default function Navbar() {
                     <span className="text-green-600 text-sm">●</span> WhatsApp
                   </a>
                   <a
-                    href="#lead"
+                    href="/#lead"
                     onClick={() => setOpen(false)}
                     className="bg-charcoal-deep text-cream text-center py-3 rounded-xl text-xs font-bold hover:bg-charcoal transition-colors"
                   >
