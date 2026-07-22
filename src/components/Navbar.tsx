@@ -131,7 +131,7 @@ export default function Navbar() {
           </div>
 
           <a
-            href="tel:917300864280"
+            href="tel:918189098662"
             className="bg-gold hover:bg-gold-dark text-charcoal-deep flex items-center gap-3 px-5 py-2.5 rounded shadow-md transition-colors"
           >
             <div className="p-1.5 bg-white/20 rounded-full">
@@ -141,7 +141,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col text-left">
               <span className="text-[10px] uppercase tracking-widest text-charcoal/70 font-bold">Admission Helpline</span>
-              <span className="text-sm font-black tracking-wide">+91-7300864280</span>
+              <span className="text-sm font-black tracking-wide">+91 8189098662</span>
             </div>
           </a>
         </div>
@@ -270,11 +270,11 @@ export default function Navbar() {
               {/* Action Banners & Contact Channels */}
               <div className="grid grid-cols-1 gap-3 pt-5 border-t border-gold/20">
                 <a
-                  href="tel:917300864280"
+                  href="tel:918189098662"
                   className="bg-gold text-charcoal-deep flex items-center justify-center gap-3 py-3.5 rounded-xl font-bold shadow-md hover:bg-gold-dark hover:text-white transition-colors"
                 >
                   <span className="text-xs uppercase tracking-wider opacity-90">Helpline:</span>
-                  <span className="text-base tracking-wide">+91-7300864280</span>
+                  <span className="text-base tracking-wide">+91 8189098662</span>
                 </a>
 
                 <div className="grid grid-cols-2 gap-3">
